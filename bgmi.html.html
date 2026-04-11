@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BGMI — Board Governance Maturity Index | Maya Hotait</title>
+<meta name="description" content="Assess your board's governance maturity across 5 critical dimensions. The Board Governance Maturity Index by Maya Hotait.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A4A;
+  --navy2:#152038;
+  --navy3:#0F1824;
+  --gold:#C8A96E;
+  --gold2:#E2C98F;
+  --gold-light:#F5E6C8;
+  --orange:#E86030;
+  --white:#F8F5EF;
+  --muted:rgba(248,245,239,0.55);
+  --border:rgba(200,169,110,0.2);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Montserrat',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:#152038;
+  color:var(--white);
+  font-family:var(--sans);
+  font-weight:300;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+/* BG */
+.bg-grid{
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(200,169,110,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,169,110,0.025) 1px,transparent 1px);
+  background-size:70px 70px;
+  pointer-events:none;z-index:0;
+}
+.bg-radial{
+  position:fixed;top:0;right:0;
+  width:50%;height:70%;
+  background:radial-gradient(ellipse at 80% 20%,rgba(200,169,110,0.05) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+/* HEADER */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:14px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(21,32,56,0.95);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.header-brand{
+  display:flex;align-items:center;gap:14px;
+  text-decoration:none;
+}
+.header-brand-text{
+  font-family:var(--serif);
+  font-size:14px;font-weight:300;
+  letter-spacing:3px;color:var(--gold);
+}
+.header-tag{
+  font-size:7px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--border);padding:3px 8px;
+}
+.header-back{
+  font-size:9px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+  display:flex;align-items:center;gap:8px;
+  transition:color 0.3s;
+}
+.header-back:hover{color:var(--gold)}
+.header-back svg{width:14px;height:14px;stroke:currentColor}
+
+/* ══ HERO ══ */
+.hero{
+  position:relative;z-index:1;
+  padding:130px 48px 70px;
+  max-width:860px;margin:0 auto;
+  text-align:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:16px;
+  margin-bottom:32px;
+}
+.hero-kicker-line{width:32px;height:1px;background:var(--gold);opacity:0.5}
+.hero-kicker-text{
+  font-size:9px;font-weight:600;letter-spacing:4px;
+  text-transform:uppercase;color:var(--gold);
+}
+.hero-acronym{
+  display:flex;justify-content:center;gap:0;
+  margin-bottom:16px;
+}
+.hero-acronym-letter{
+  font-family:var(--serif);
+  font-size:clamp(48px,10vw,96px);
+  font-weight:300;line-height:0.9;
+  color:var(--white);letter-spacing:-2px;
+  position:relative;
+}
+.hero-acronym-letter.gold{color:var(--gold)}
+.hero-full-name{
+  font-size:11px;font-weight:500;letter-spacing:5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:28px;
+}
+.hero-desc{
+  font-size:13px;color:var(--muted);
+  line-height:1.9;max-width:580px;margin:0 auto 36px;
+}
+/* 5 Dimensions preview */
+.dims-preview{
+  display:flex;justify-content:center;gap:8px;
+  flex-wrap:wrap;margin-bottom:44px;
+}
+.dim-pill{
+  font-size:8px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+  border:1px solid rgba(200,169,110,0.15);
+  padding:6px 14px;
+}
+.dim-pill.active{
+  color:var(--gold);border-color:rgba(200,169,110,0.4);
+  background:rgba(200,169,110,0.06);
+}
+.hero-meta{
+  display:flex;align-items:center;justify-content:center;
+  gap:28px;flex-wrap:wrap;margin-bottom:40px;
+}
+.hero-meta-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.hero-meta-item svg{width:12px;height:12px;stroke:var(--gold)}
+.start-btn{
+  font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy2);background:var(--gold);
+  border:none;padding:16px 48px;
+  cursor:pointer;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 28px rgba(200,169,110,0.3);
+}
+.start-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 36px rgba(200,169,110,0.45)}
+.hero-sub{
+  margin-top:14px;
+  font-size:9px;color:var(--muted);
+  letter-spacing:1px;font-style:italic;
+}
+
+/* ══ DIMENSION INDICATOR ══ */
+.dim-indicator{
+  position:relative;z-index:1;
+  max-width:720px;margin:0 auto;
+  padding:0 48px;
+  display:none;
+}
+.dim-steps{
+  display:flex;gap:0;margin-bottom:32px;
+}
+.dim-step{
+  flex:1;padding:10px 8px;
+  border-bottom:2px solid rgba(200,169,110,0.1);
+  text-align:center;
+  transition:border-color 0.3s;
+}
+.dim-step.active{border-color:var(--gold)}
+.dim-step.done{border-color:rgba(200,169,110,0.4)}
+.dim-step-num{
+  font-family:var(--serif);
+  font-size:18px;font-weight:300;
+  color:rgba(200,169,110,0.2);
+  line-height:1;margin-bottom:4px;
+  transition:color 0.3s;
+}
+.dim-step.active .dim-step-num{color:var(--gold)}
+.dim-step.done .dim-step-num{color:rgba(200,169,110,0.5)}
+.dim-step-name{
+  font-size:7px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;color:rgba(248,245,239,0.2);
+  transition:color 0.3s;
+}
+.dim-step.active .dim-step-name{color:var(--muted)}
+.dim-step.done .dim-step-name{color:rgba(248,245,239,0.3)}
+
+/* ══ QUESTION ══ */
+.question-section{
+  position:relative;z-index:1;
+  max-width:720px;margin:0 auto;
+  padding:0 48px 60px;
+  display:none;
+}
+.q-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:8px;
+}
+.q-dim-label{
+  font-size:8px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--orange);
+  display:flex;align-items:center;gap:8px;
+}
+.q-dim-label::before{content:'';width:16px;height:1px;background:var(--orange)}
+.q-num{
+  font-family:var(--serif);font-size:13px;color:var(--muted);
+}
+.progress-bar{
+  height:1px;background:rgba(200,169,110,0.1);
+  margin-bottom:36px;overflow:hidden;
+}
+.progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+  transition:width 0.6s cubic-bezier(0.16,1,0.3,1);
+  width:0%;
+}
+.q-wrap{
+  opacity:0;transform:translateX(16px);
+  transition:opacity 0.45s ease,transform 0.45s ease;
+}
+.q-wrap.visible{opacity:1;transform:translateX(0)}
+.q-text{
+  font-family:var(--serif);
+  font-size:clamp(19px,2.8vw,26px);
+  font-weight:300;line-height:1.45;
+  color:var(--white);margin-bottom:28px;
+}
+.q-text em{font-style:italic;color:var(--gold-light)}
+.q-context{
+  font-size:11px;color:var(--muted);
+  line-height:1.7;margin-bottom:28px;
+  padding:14px 18px;
+  border-left:2px solid rgba(200,169,110,0.2);
+  font-style:italic;
+}
+/* Options */
+.options-list{display:flex;flex-direction:column;gap:8px;margin-bottom:36px}
+.opt{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 20px;
+  background:rgba(27,42,74,0.35);
+  border:1px solid rgba(200,169,110,0.12);
+  cursor:pointer;text-align:left;
+  transition:all 0.2s ease;
+  font-family:var(--sans);
+  position:relative;overflow:hidden;
+}
+.opt::after{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;width:0;
+  background:rgba(200,169,110,0.08);
+  transition:width 0.3s ease;
+}
+.opt:hover::after,.opt.selected::after{width:100%}
+.opt:hover,.opt.selected{border-color:rgba(200,169,110,0.4)}
+.opt.selected{border-left:2px solid var(--gold)}
+.opt-level{
+  width:26px;height:26px;flex-shrink:0;
+  font-size:9px;font-weight:600;letter-spacing:1px;
+  color:rgba(200,169,110,0.5);
+  border:1px solid rgba(200,169,110,0.2);
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;margin-top:1px;
+  position:relative;z-index:1;
+}
+.opt.selected .opt-level{
+  background:var(--gold);color:var(--navy2);
+  border-color:var(--gold);
+}
+.opt-body{position:relative;z-index:1}
+.opt-main{
+  font-size:12px;font-weight:400;
+  color:var(--white);line-height:1.5;margin-bottom:3px;
+}
+.opt-detail{font-size:10px;color:var(--muted);line-height:1.4}
+/* Nav */
+.q-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:20px;border-top:1px solid var(--border);
+}
+.btn-back{
+  font-size:9px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+  background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:7px;
+  transition:color 0.3s;font-family:var(--sans);
+}
+.btn-back:hover{color:var(--gold)}
+.btn-back svg{width:13px;height:13px;stroke:currentColor}
+.btn-continue{
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy2);
+  background:var(--gold);border:none;
+  padding:11px 26px;cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+  transition:background 0.3s,transform 0.2s;
+  font-family:var(--sans);
+  opacity:0.35;pointer-events:none;
+}
+.btn-continue.active{opacity:1;pointer-events:all}
+.btn-continue.active:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-continue svg{width:13px;height:13px;stroke:var(--navy2)}
+
+/* ══ LEAD GATE ══ */
+.lead-gate{
+  position:relative;z-index:1;
+  min-height:calc(100vh - 60px);
+  display:flex;align-items:center;justify-content:center;
+  padding:100px 48px 80px;
+  display:none;
+}
+.lead-box{
+  max-width:620px;width:100%;
+  background:rgba(27,42,74,0.5);
+  border:1px solid rgba(200,169,110,0.2);
+  padding:52px 48px;
+  position:relative;
+}
+.lead-box::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--gold),transparent);
+}
+.lead-ready{
+  display:flex;align-items:center;gap:10px;
+  font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:24px;
+}
+.lead-ready-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 10px rgba(200,169,110,0.6);
+  animation:pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.4)}}
+.lead-title{
+  font-family:var(--serif);
+  font-size:clamp(24px,3.5vw,36px);
+  font-weight:300;line-height:1.2;
+  margin-bottom:12px;
+}
+.lead-title em{font-style:italic;color:var(--gold)}
+.lead-desc{
+  font-size:12px;color:var(--muted);
+  line-height:1.8;margin-bottom:28px;
+}
+/* Blurred preview */
+.lead-preview{
+  position:relative;
+  background:rgba(15,24,36,0.5);
+  border:1px solid var(--border);
+  padding:18px 20px;
+  margin-bottom:28px;overflow:hidden;
+}
+.lead-preview-row{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:6px 0;
+  border-bottom:1px solid rgba(200,169,110,0.06);
+}
+.lead-preview-row:last-child{border:none}
+.lead-preview-dim{
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.lead-preview-bar-wrap{
+  flex:1;margin:0 14px;
+  height:2px;background:rgba(200,169,110,0.08);
+}
+.lead-preview-bar-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+}
+.lead-preview-score{
+  font-family:var(--serif);font-size:12px;color:var(--gold);
+  opacity:0.5;
+}
+.lead-preview-blur{
+  position:absolute;inset:0;
+  background:linear-gradient(transparent 20%,rgba(21,32,56,0.97));
+  display:flex;align-items:flex-end;justify-content:center;
+  padding-bottom:12px;
+}
+.lead-preview-lock{
+  font-size:8px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:7px;
+}
+.lead-preview-lock svg{width:11px;height:11px;stroke:var(--gold)}
+/* Form */
+.lead-form{margin-bottom:20px}
+.lead-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.lead-fg{display:flex;flex-direction:column;gap:6px}
+.lead-fg label{
+  font-size:8px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.lead-fg input,.lead-fg select{
+  background:rgba(27,42,74,0.6);
+  border:1px solid rgba(200,169,110,0.18);
+  color:var(--white);font-family:var(--sans);
+  font-size:12px;font-weight:300;
+  padding:11px 14px;outline:none;
+  transition:border-color 0.3s;
+  -webkit-appearance:none;
+}
+.lead-fg input::placeholder{color:rgba(248,245,239,0.25)}
+.lead-fg input:focus,.lead-fg select:focus{border-color:var(--gold)}
+.lead-fg select option{background:var(--navy2)}
+.lead-privacy{
+  font-size:9px;color:var(--muted);
+  font-style:italic;letter-spacing:0.5px;
+  display:flex;align-items:center;gap:7px;
+  margin-bottom:18px;
+}
+.lead-privacy svg{width:11px;height:11px;stroke:var(--gold);flex-shrink:0}
+.lead-submit{
+  width:100%;font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy2);background:var(--gold);
+  border:none;padding:15px;cursor:pointer;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 20px rgba(200,169,110,0.25);
+}
+.lead-submit:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 32px rgba(200,169,110,0.4)}
+.lead-trust{
+  display:flex;justify-content:center;gap:20px;
+  flex-wrap:wrap;margin-top:16px;
+}
+.lead-trust-item{
+  display:flex;align-items:center;gap:6px;
+  font-size:8px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.lead-trust-item svg{width:10px;height:10px;stroke:var(--gold)}
+
+/* ══ RESULTS ══ */
+.results-section{
+  position:relative;z-index:1;
+  max-width:860px;margin:0 auto;
+  padding:100px 48px 80px;
+  display:none;
+}
+.results-top{text-align:center;margin-bottom:56px}
+.results-eyebrow{
+  font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:28px;
+}
+/* Maturity Badge */
+.maturity-badge{
+  display:inline-flex;align-items:center;gap:16px;
+  padding:20px 32px;
+  border:1px solid rgba(200,169,110,0.25);
+  background:rgba(27,42,74,0.4);
+  margin-bottom:32px;
+}
+.maturity-level-num{
+  font-family:var(--serif);
+  font-size:48px;font-weight:300;
+  color:var(--gold);line-height:1;
+}
+.maturity-info{}
+.maturity-label{
+  font-size:8px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:4px;
+}
+.maturity-name{
+  font-family:var(--serif);
+  font-size:22px;font-weight:300;
+  color:var(--white);
+}
+.maturity-name em{font-style:italic;color:var(--gold)}
+/* Score */
+.score-wrap{
+  display:flex;align-items:center;justify-content:center;
+  gap:24px;margin-bottom:36px;flex-wrap:wrap;
+}
+.score-display{
+  font-family:var(--serif);
+  font-size:clamp(52px,8vw,80px);
+  font-weight:300;color:var(--white);
+  line-height:1;
+}
+.score-display span{
+  font-size:0.4em;color:var(--muted);
+  vertical-align:top;margin-top:8px;
+  display:inline-block;
+}
+.score-visual{
+  width:120px;height:120px;position:relative;
+}
+.score-visual svg{transform:rotate(-90deg)}
+.score-bg-c{fill:none;stroke:rgba(200,169,110,0.08);stroke-width:5}
+.score-fill-c{
+  fill:none;stroke-width:5;stroke-linecap:round;
+  stroke-dasharray:339;stroke-dashoffset:339;
+  transition:stroke-dashoffset 2.2s cubic-bezier(0.16,1,0.3,1) 0.3s;
+}
+/* Insight */
+.insight-card{
+  background:rgba(27,42,74,0.45);
+  border:1px solid rgba(200,169,110,0.18);
+  border-left:3px solid var(--gold);
+  padding:28px 32px;margin-bottom:40px;
+  text-align:left;position:relative;
+}
+.insight-card::before{
+  content:'"';font-family:var(--serif);
+  font-size:72px;color:rgba(200,169,110,0.08);
+  line-height:0.7;position:absolute;
+  top:14px;left:18px;pointer-events:none;
+}
+.insight-label{
+  font-size:8px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:10px;
+}
+.insight-text{
+  font-family:var(--serif);
+  font-size:17px;font-weight:300;font-style:italic;
+  color:var(--white);line-height:1.75;
+  position:relative;z-index:1;
+}
+/* 5 Dimension Scores */
+.dims-result{margin-bottom:44px;text-align:left}
+.dims-result-title{
+  font-size:9px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:20px;
+  display:flex;align-items:center;gap:12px;
+}
+.dims-result-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.dim-result-item{
+  display:grid;
+  grid-template-columns:180px 1fr 48px;
+  align-items:center;gap:16px;
+  margin-bottom:16px;
+}
+.dim-result-name{
+  font-size:10px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--white);
+}
+.dim-result-bar{height:3px;background:rgba(200,169,110,0.08);border-radius:2px;overflow:hidden}
+.dim-result-fill{
+  height:100%;border-radius:2px;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+  width:0%;transition:width 1.4s cubic-bezier(0.16,1,0.3,1);
+}
+.dim-result-pct{
+  font-family:var(--serif);font-size:14px;
+  color:var(--gold);text-align:right;
+}
+/* Gaps */
+.gaps-section{margin-bottom:44px;text-align:left}
+.gaps-title{
+  font-size:9px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.gaps-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.gap-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:14px 18px;margin-bottom:8px;
+  background:rgba(232,96,48,0.05);
+  border:1px solid rgba(232,96,48,0.18);
+  border-left:2px solid var(--orange);
+  opacity:0;transform:translateX(-10px);
+  transition:opacity 0.4s ease,transform 0.4s ease;
+}
+.gap-item.visible{opacity:1;transform:translateX(0)}
+.gap-icon{width:16px;height:16px;flex-shrink:0;color:var(--orange);margin-top:1px}
+.gap-icon svg{width:16px;height:16px;stroke:currentColor}
+.gap-text{font-size:12px;color:var(--white);line-height:1.5}
+/* Strengths */
+.strengths-section{margin-bottom:44px;text-align:left}
+.strengths-title{
+  font-size:9px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:12px;
+}
+.strengths-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.strength-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:12px 18px;margin-bottom:8px;
+  border:1px solid rgba(200,169,110,0.12);
+}
+.strength-icon{width:16px;height:16px;flex-shrink:0;color:var(--gold);margin-top:1px}
+.strength-icon svg{width:16px;height:16px;stroke:currentColor}
+.strength-text{font-size:12px;color:var(--muted);line-height:1.5}
+/* CTA */
+.result-cta{
+  background:rgba(27,42,74,0.5);
+  border:1px solid rgba(200,169,110,0.22);
+  padding:44px 40px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.result-cta::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--gold),transparent);
+}
+.cta-urgency{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:8px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--orange);
+  margin-bottom:18px;
+}
+.cta-urgency-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--orange);
+  animation:pulse 1.5s ease-in-out infinite;
+}
+.cta-title{
+  font-family:var(--serif);
+  font-size:clamp(20px,3vw,30px);
+  font-weight:300;line-height:1.3;
+  color:var(--white);margin-bottom:12px;
+}
+.cta-title em{font-style:italic;color:var(--gold)}
+.cta-desc{
+  font-size:12px;color:var(--muted);
+  line-height:1.8;max-width:520px;
+  margin:0 auto 24px;
+}
+.cta-deliverables{
+  display:flex;justify-content:center;gap:20px;
+  flex-wrap:wrap;margin-bottom:28px;
+}
+.cta-del{
+  display:flex;align-items:center;gap:7px;
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.cta-del svg{width:11px;height:11px;stroke:var(--gold)}
+.cta-btn{
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy2);background:var(--gold);
+  border:none;padding:16px 44px;
+  text-decoration:none;cursor:pointer;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 24px rgba(200,169,110,0.3);
+}
+.cta-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 36px rgba(200,169,110,0.5)}
+.cta-authority{
+  margin-top:16px;font-size:9px;
+  color:var(--muted);letter-spacing:1px;font-style:italic;
+}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .site-header{padding:12px 18px}
+  .hero{padding:110px 20px 60px}
+  .dim-indicator{padding:0 20px}
+  .question-section{padding:0 20px 60px}
+  .lead-gate{padding:90px 20px 60px}
+  .results-section{padding:90px 20px 60px}
+  .lead-box{padding:32px 22px}
+  .lead-row{grid-template-columns:1fr}
+  .result-cta{padding:32px 20px}
+  .dim-result-item{grid-template-columns:120px 1fr 40px}
+  .dim-result-name{font-size:8px}
+  .dims-preview{gap:6px}
+  .dim-pill{font-size:7px;padding:5px 10px}
+  .score-wrap{flex-direction:column;gap:16px}
+  .maturity-badge{flex-direction:column;text-align:center;gap:8px}
+  .cta-deliverables{flex-direction:column;align-items:center}
+}
+
+.sys-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:rgba(21,32,56,0.97);
+  border-top:1px solid rgba(200,169,110,0.2);
+  backdrop-filter:blur(20px);
+  padding:12px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;
+}
+.sys-banner::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--gold),transparent);
+}
+.sys-banner-text{
+  font-size:11px;color:var(--muted);
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.sys-banner-text strong{
+  color:var(--white);font-weight:400;
+  font-family:var(--serif);font-size:13px;font-style:italic;
+}
+.sys-banner-sep{color:rgba(200,169,110,0.3)}
+.sys-banner-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy2);
+  background:var(--gold);padding:9px 20px;
+  text-decoration:none;white-space:nowrap;flex-shrink:0;
+  transition:background 0.3s;
+}
+.sys-banner-link:hover{background:var(--gold2)}
+.sys-banner-link svg{width:12px;height:12px;stroke:var(--navy2)}
+@media(max-width:768px){
+  .sys-banner{padding:10px 16px;flex-direction:column;gap:10px}
+  .sys-banner-link{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-radial"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://mayahotait.com" class="header-brand">
+    <span class="header-brand-text">Maya Hotait</span>
+    <span class="header-tag">BGMI™</span>
+  </a>
+  <a href="https://mayahotait.com" class="header-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Website
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="heroSection">
+  <div class="hero-kicker">
+    <div class="hero-kicker-line"></div>
+    <span class="hero-kicker-text">Board Assessment Tool</span>
+    <div class="hero-kicker-line"></div>
+  </div>
+  <div class="hero-acronym">
+    <span class="hero-acronym-letter gold">B</span>
+    <span class="hero-acronym-letter gold">G</span>
+    <span class="hero-acronym-letter gold">M</span>
+    <span class="hero-acronym-letter gold">I</span>
+  </div>
+  <p class="hero-full-name">Board Governance Maturity Index</p>
+  <p class="hero-desc">A precision diagnostic for boards and executives — assessing governance maturity across five structural dimensions to surface what formal reports rarely reveal.</p>
+  <div class="dims-preview">
+    <div class="dim-pill active">Board Structure</div>
+    <div class="dim-pill active">Decision & Oversight</div>
+    <div class="dim-pill active">Governance Frameworks</div>
+    <div class="dim-pill active">CEO Interaction</div>
+    <div class="dim-pill active">Risk Supervision</div>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      10–12 Minutes
+    </div>
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      8 Elite Questions
+    </div>
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Maturity Level + Score
+    </div>
+  </div>
+  <button class="start-btn" onclick="startBGMI()">Begin the BGMI Assessment →</button>
+  <p class="hero-sub">Designed exclusively for Board Members, Chairmen, CEOs & CFOs</p>
+</section>
+
+<!-- DIMENSION INDICATOR -->
+<div class="dim-indicator" id="dimIndicator">
+  <div class="dim-steps" id="dimSteps"></div>
+</div>
+
+<!-- QUESTIONS -->
+<div class="question-section" id="questionSection">
+  <div class="q-header">
+    <span class="q-dim-label" id="qDimLabel">Board Structure</span>
+    <span class="q-num" id="qNum">1 / 8</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="q-wrap" id="qWrap">
+    <p class="q-text" id="qText"></p>
+    <div class="q-context" id="qContext" style="display:none"></div>
+    <div class="options-list" id="optionsList"></div>
+    <div class="q-nav">
+      <button class="btn-back" id="btnBack" onclick="prevQ()">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Previous
+      </button>
+      <button class="btn-continue" id="btnContinue" onclick="nextQ()">
+        Continue
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- LEAD GATE -->
+<div class="lead-gate" id="leadGate">
+  <div class="lead-box">
+    <div class="lead-ready">
+      <div class="lead-ready-dot"></div>
+      Your BGMI Report Is Ready
+    </div>
+    <h2 class="lead-title">Your <em>Governance Maturity Score</em><br>Has Been Calculated</h2>
+    <p class="lead-desc">Enter your details to unlock your full Board Governance Maturity Index — including maturity level, dimension scores, key gaps, and executive insight.</p>
+    <div class="lead-preview">
+      <div class="lead-preview-row">
+        <span class="lead-preview-dim">Board Structure</span>
+        <div class="lead-preview-bar-wrap"><div class="lead-preview-bar-fill" style="width:65%"></div></div>
+        <span class="lead-preview-score">••/100</span>
+      </div>
+      <div class="lead-preview-row">
+        <span class="lead-preview-dim">Decision & Oversight</span>
+        <div class="lead-preview-bar-wrap"><div class="lead-preview-bar-fill" style="width:48%"></div></div>
+        <span class="lead-preview-score">••/100</span>
+      </div>
+      <div class="lead-preview-row">
+        <span class="lead-preview-dim">Gov. Frameworks</span>
+        <div class="lead-preview-bar-wrap"><div class="lead-preview-bar-fill" style="width:72%"></div></div>
+        <span class="lead-preview-score">••/100</span>
+      </div>
+      <div class="lead-preview-row">
+        <span class="lead-preview-dim">CEO Interaction</span>
+        <div class="lead-preview-bar-wrap"><div class="lead-preview-bar-fill" style="width:55%"></div></div>
+        <span class="lead-preview-score">••/100</span>
+      </div>
+      <div class="lead-preview-row">
+        <span class="lead-preview-dim">Risk Supervision</span>
+        <div class="lead-preview-bar-wrap"><div class="lead-preview-bar-fill" style="width:60%"></div></div>
+        <span class="lead-preview-score">••/100</span>
+      </div>
+      <div class="lead-preview-blur">
+        <div class="lead-preview-lock">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Enter details to unlock your results
+        </div>
+      </div>
+    </div>
+    <form class="lead-form" onsubmit="submitLead(event)">
+      <div class="lead-row">
+        <div class="lead-fg">
+          <label>Full Name *</label>
+          <input type="text" id="lName" placeholder="Your full name" required>
+        </div>
+        <div class="lead-fg">
+          <label>Email Address *</label>
+          <input type="email" id="lEmail" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="lead-row">
+        <div class="lead-fg">
+          <label>Organisation *</label>
+          <input type="text" id="lCompany" placeholder="Company or institution" required>
+        </div>
+        <div class="lead-fg">
+          <label>Your Role on the Board</label>
+          <select id="lRole">
+            <option value="" disabled selected>Select your role</option>
+            <option>Chairman / Board Chair</option>
+            <option>Board Member / Director</option>
+            <option>CEO / Managing Director</option>
+            <option>CFO / Finance Director</option>
+            <option>Independent Director</option>
+            <option>Executive Committee Member</option>
+          </select>
+        </div>
+      </div>
+      <div class="lead-privacy">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Confidential — your results are never shared. Used only to send your diagnostic report.
+      </div>
+      <button type="submit" class="lead-submit" id="lSubmitBtn">Unlock My BGMI Report →</button>
+    </form>
+    <div class="lead-trust">
+      <div class="lead-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Instant results</div>
+      <div class="lead-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No spam, ever</div>
+      <div class="lead-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>20+ years board advisory</div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results-section" id="resultsSection"></div>
+
+<script>
+var questions = [
+  {
+    dim:1, dimName:"Board Structure & Independence",
+    text:"How would you characterize the <em>composition and independence</em> of your board?",
+    context:"True independence requires more than compliance — it demands structural separation between oversight and management.",
+    options:[
+      {score:4,main:"Board is majority-independent with clearly defined roles, tenure policies, and a formal skills matrix.",detail:"Independence is structural, not nominal — board members have no conflicting interests and bring diverse strategic expertise."},
+      {score:3,main:"Most board members are independent, though role boundaries between oversight and management occasionally blur.",detail:"Independence exists in principle but lacks consistent enforcement through formal policies."},
+      {score:2,main:"Board composition is mixed — some independent members, but significant representation from management or affiliated parties.",detail:"Independence is partial, creating potential conflicts in oversight effectiveness."},
+      {score:1,main:"Board is largely composed of insiders, management representatives, or founding shareholders.",detail:"Structural independence is absent — oversight and execution are effectively merged."}
+    ]
+  },
+  {
+    dim:1, dimName:"Board Structure & Independence",
+    text:"Does your board operate with a <em>formal charter, terms of reference, and defined committee structure</em>?",
+    context:"Governance architecture is the operating system of the board — without it, even experienced directors underperform.",
+    options:[
+      {score:4,main:"Full governance documentation is in place — board charter, committee mandates, director agreements, and annual review cycles.",detail:"The governance framework is living, regularly reviewed, and enforced at every board interaction."},
+      {score:3,main:"Core documents exist (charter, basic committees) but are not consistently applied or reviewed.",detail:"Documentation is present but governance operates partially on informal norms."},
+      {score:2,main:"Some documents exist but were inherited or drafted without formal board approval.",detail:"Governance framework is incomplete — gaps exist in committee mandates or director accountability."},
+      {score:1,main:"No formal governance documentation exists — the board operates on convention and relationship dynamics.",detail:"Governance is entirely informal with no structural accountability mechanism."}
+    ]
+  },
+  {
+    dim:2, dimName:"Decision-Making & Oversight",
+    text:"How does your board exercise its <em>challenge function</em> — the capacity to constructively question executive decisions?",
+    context:"The board's primary value is not to approve — it is to challenge, stress-test, and improve the quality of strategic decisions.",
+    options:[
+      {score:4,main:"Board regularly challenges management assumptions with structured debate, independent analysis, and documented dissent.",detail:"Challenge function is embedded — board members are selected and empowered specifically to question executive judgment."},
+      {score:3,main:"Board challenges occur but are episodic — dependent on individual directors rather than structural practice.",detail:"Challenge culture is emerging but inconsistent across decisions and board meetings."},
+      {score:2,main:"Board discussion is largely aligned with management's position — meaningful challenge is rare.",detail:"Oversight is nominal — board tends to ratify rather than interrogate executive proposals."},
+      {score:1,main:"Board approval is a formality — management decisions are presented for endorsement, not examination.",detail:"The board's oversight function is effectively absent."}
+    ]
+  },
+  {
+    dim:2, dimName:"Decision-Making & Oversight",
+    text:"How is <em>decision authority formally delineated</em> between the board and executive management?",
+    context:"Ambiguity in decision rights is one of the most costly structural gaps in governance — it creates both overreach and abdication.",
+    options:[
+      {score:4,main:"A formal delegation of authority framework is in place — specifying board-reserved matters, CEO powers, and escalation thresholds.",detail:"Decision rights are documented, communicated, and enforced consistently across the organization."},
+      {score:3,main:"General understanding of decision boundaries exists, though not formally codified.",detail:"Escalation occurs inconsistently — some decisions are appropriately elevated; others are resolved informally."},
+      {score:2,main:"Board and management decision authority overlaps — creating either micromanagement or governance gaps.",detail:"No clear escalation framework — decisions are elevated based on politics, not principle."},
+      {score:1,main:"Decision authority is undefined — the board and management operate without clear jurisdictional boundaries.",detail:"This creates significant governance risk and structural confusion at critical decision moments."}
+    ]
+  },
+  {
+    dim:3, dimName:"Governance Frameworks & Policies",
+    text:"How developed is your organization's <em>internal governance policy architecture</em> — beyond regulatory minimum compliance?",
+    context:"Governance policies are not compliance checkboxes — they are the operating rules that protect the board's judgment and institutional integrity.",
+    options:[
+      {score:4,main:"Comprehensive policy suite in place: conflicts of interest, related-party transactions, whistleblowing, board evaluation, and succession.",detail:"Policies are actively enforced, regularly reviewed, and embedded in board and management behavior."},
+      {score:3,main:"Core policies exist but coverage is incomplete — some critical governance areas lack formal policy.",detail:"Policy architecture is regulatory-driven rather than strategically designed for the board's needs."},
+      {score:2,main:"Basic policies exist in name but enforcement is inconsistent or not monitored.",detail:"Policy framework is a compliance artifact — not a governance tool."},
+      {score:1,main:"Minimal or no governance policy framework beyond legal requirements.",detail:"The board operates without structural safeguards — governance is managed through informal norms and personal judgment."}
+    ]
+  },
+  {
+    dim:4, dimName:"CEO & Leadership Interaction",
+    text:"How would you characterize the <em>structural relationship</em> between your board and the CEO?",
+    context:"The board-CEO relationship is the most consequential dynamic in governance. When it lacks structural clarity, both oversight and execution suffer.",
+    options:[
+      {score:4,main:"A formal CEO performance framework is in place — clear objectives, quarterly oversight, structured evaluation, and succession planning.",detail:"The board-CEO relationship is professional, structured, and clearly delineated — oversight without operational interference."},
+      {score:3,main:"CEO accountability exists informally — performance is discussed but not against structured criteria or documented outcomes.",detail:"The relationship functions but lacks the formal architecture needed to sustain accountability at scale."},
+      {score:2,main:"CEO oversight is minimal — board engagement is primarily informational rather than evaluative.",detail:"The board receives updates but does not systematically assess CEO performance or organizational leadership health."},
+      {score:1,main:"CEO and board operate with blurred boundaries — either the board is operationally involved, or the CEO is effectively unsupervised.",detail:"The oversight relationship is structurally broken — creating significant governance and performance risk."}
+    ]
+  },
+  {
+    dim:5, dimName:"Risk & Strategic Supervision",
+    text:"How does your board exercise <em>strategic oversight and risk governance</em> — beyond approving annual plans?",
+    context:"Strategic supervision requires the board to think beyond the current year — anticipating systemic risk, market shifts, and structural vulnerabilities.",
+    options:[
+      {score:4,main:"Board has a formal risk governance framework — including enterprise risk appetite, scenario reviews, and dedicated risk committee oversight.",detail:"Risk is integrated into every strategic decision — the board actively stress-tests assumptions and monitors emerging exposures."},
+      {score:3,main:"Risk is reviewed periodically but not systematically embedded in board decision-making.",detail:"Enterprise risk management exists as a function, but board oversight is periodic rather than continuous."},
+      {score:2,main:"Risk is managed operationally by management with limited structured board involvement.",detail:"Board receives risk summaries but does not set risk appetite or conduct independent stress-testing."},
+      {score:1,main:"Risk governance is absent at the board level — risk decisions are delegated entirely to management.",detail:"The board has no formal visibility into organizational risk exposure — a critical governance gap."}
+    ]
+  },
+  {
+    dim:5, dimName:"Risk & Strategic Supervision",
+    text:"How prepared is your board to <em>govern effectively through a major disruption</em> — a financial shock, leadership crisis, or external threat?",
+    context:"Crisis governance reveals the true maturity of a board. Structure built only for stability will fracture under pressure.",
+    options:[
+      {score:4,main:"Board has tested crisis protocols, defined emergency decision authorities, and reviewed succession plans within the last 12 months.",detail:"Crisis readiness is embedded — the board knows exactly how it will function when normal governance cannot operate."},
+      {score:3,main:"Crisis governance has been discussed but not formally structured or tested.",detail:"The board understands the importance of crisis readiness but has not operationalized it."},
+      {score:2,main:"Crisis governance relies on management — the board would convene reactively with no pre-defined protocols.",detail:"Governance continuity under pressure is assumed, not designed."},
+      {score:1,main:"There is no crisis governance planning — the board would navigate disruption through improvisation.",detail:"This represents a fundamental governance vulnerability that compounds any operational crisis."}
+    ]
+  }
+];
+
+var dims = [
+  {id:1,name:"Board Structure",short:"Structure"},
+  {id:2,name:"Decision & Oversight",short:"Decisions"},
+  {id:3,name:"Gov. Frameworks",short:"Frameworks"},
+  {id:4,name:"CEO Interaction",short:"CEO"},
+  {id:5,name:"Risk Supervision",short:"Risk"}
+];
+
+var currentQ = 0;
+var answers = new Array(questions.length).fill(null);
+
+function startBGMI(){
+  document.getElementById('heroSection').style.display='none';
+  document.getElementById('dimIndicator').style.display='block';
+  document.getElementById('questionSection').style.display='block';
+  buildDimSteps();
+  renderQ();
+}
+
+function buildDimSteps(){
+  var html = '';
+  dims.forEach(function(d){
+    html += '<div class="dim-step" id="dimStep'+d.id+'"><div class="dim-step-num">0'+d.id+'</div><div class="dim-step-name">'+d.short+'</div></div>';
+  });
+  document.getElementById('dimSteps').innerHTML = html;
+  updateDimSteps();
+}
+
+function updateDimSteps(){
+  var curDim = questions[currentQ].dim;
+  dims.forEach(function(d){
+    var el = document.getElementById('dimStep'+d.id);
+    if(!el) return;
+    el.className = 'dim-step';
+    if(d.id === curDim) el.classList.add('active');
+    else if(d.id < curDim) el.classList.add('done');
+  });
+}
+
+function renderQ(){
+  var q = questions[currentQ];
+  document.getElementById('qDimLabel').textContent = q.dimName;
+  document.getElementById('qNum').textContent = (currentQ+1) + ' / ' + questions.length;
+  document.getElementById('progressFill').style.width = (currentQ/questions.length*100)+'%';
+  document.getElementById('qText').innerHTML = q.text;
+
+  var ctx = document.getElementById('qContext');
+  if(q.context){
+    ctx.style.display='block';
+    ctx.textContent = q.context;
+  } else {
+    ctx.style.display='none';
+  }
+
+  document.getElementById('btnBack').style.visibility = currentQ===0?'hidden':'visible';
+
+  var cont = document.getElementById('btnContinue');
+  var isLast = currentQ === questions.length-1;
+  cont.innerHTML = isLast
+    ? 'View My Results <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>'
+    : 'Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+  var list = document.getElementById('optionsList');
+  list.innerHTML='';
+  q.options.forEach(function(opt,i){
+    var btn = document.createElement('button');
+    btn.className='opt'+(answers[currentQ]===i?' selected':'');
+    btn.innerHTML='<div class="opt-level">'+(i+1)+'</div><div class="opt-body"><div class="opt-main">'+opt.main+'</div><div class="opt-detail">'+opt.detail+'</div></div>';
+    btn.onclick=function(){selectOpt(i)};
+    list.appendChild(btn);
+  });
+
+  updateContinue();
+  updateDimSteps();
+
+  var wrap = document.getElementById('qWrap');
+  wrap.classList.remove('visible');
+  setTimeout(function(){wrap.classList.add('visible')},50);
+}
+
+function selectOpt(i){
+  answers[currentQ]=i;
+  document.querySelectorAll('.opt').forEach(function(b,j){
+    b.classList.toggle('selected',j===i);
+  });
+  updateContinue();
+}
+
+function updateContinue(){
+  document.getElementById('btnContinue').classList.toggle('active',answers[currentQ]!==null);
+}
+
+function nextQ(){
+  if(answers[currentQ]===null) return;
+  if(currentQ<questions.length-1){currentQ++;renderQ();}
+  else showLeadGate();
+}
+
+function prevQ(){
+  if(currentQ>0){currentQ--;renderQ();}
+}
+
+function showLeadGate(){
+  document.getElementById('dimIndicator').style.display='none';
+  document.getElementById('questionSection').style.display='none';
+  document.getElementById('leadGate').style.display='flex';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function submitLead(e){
+  e.preventDefault();
+  var btn = document.getElementById('lSubmitBtn');
+  var name = document.getElementById('lName').value;
+  var email = document.getElementById('lEmail').value;
+  var company = document.getElementById('lCompany').value;
+  var role = document.getElementById('lRole').value;
+
+  btn.textContent = 'Generating your BGMI report...';
+  btn.style.opacity='0.7';
+
+  var totalScore = 0;
+  var dimScores = {1:0,2:0,3:0,4:0,5:0};
+  var dimCounts = {1:0,2:0,3:0,4:0,5:0};
+  questions.forEach(function(q,i){
+    if(answers[i]!==null){
+      var s = q.options[answers[i]].score;
+      totalScore += s;
+      dimScores[q.dim] += s;
+      dimCounts[q.dim]++;
+    }
+  });
+  var pct = Math.round((totalScore/(questions.length*4))*100);
+  var level = pct>=80?4:pct>=60?3:pct>=40?2:1;
+  var levelName = ['','Informal Governance','Emerging Structure','Structured Governance','High-Performance Board'][level];
+
+  var summary = 'Score: '+pct+'/100 | Level '+level+': '+levelName+' | ';
+  dims.forEach(function(d){
+    var dp = Math.round((dimScores[d.id]/(dimCounts[d.id]*4))*100);
+    summary += d.name+': '+dp+'% | ';
+  });
+
+  var fd = new FormData();
+  fd.append('access_key','bc54ec16-ba1b-45d7-9089-201f01ed157d');
+  fd.append('subject','BGMI Completed — '+name+' | Level '+level+': '+levelName+' | Score: '+pct+'/100');
+  fd.append('from_name','Maya Hotait BGMI Tool');
+  fd.append('name',name);
+  fd.append('email',email);
+  fd.append('company',company);
+  fd.append('role',role);
+  fd.append('bgmi_score',pct+'/100 — Level '+level+': '+levelName);
+  fd.append('dimension_breakdown',summary);
+
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:fd})
+    .catch(function(err){console.log(err)});
+
+  document.getElementById('leadGate').style.display='none';
+  renderResults(totalScore,dimScores,dimCounts,pct,level,levelName,name);
+}
+
+function renderResults(totalScore,dimScores,dimCounts,pct,level,levelName,name){
+  var rs = document.getElementById('resultsSection');
+  rs.style.display='block';
+
+  var tierColor = level===4?'#7BC48A':level===3?'#C8A96E':level===2?'#E8B84B':'#E86030';
+
+  var insights = [
+    '',
+    'Your board is operating without formal governance infrastructure — decisions are personality-driven and accountability is structural absent. This creates compounding risk as the organization grows or faces external pressure.',
+    'Governance structures are beginning to take shape, but critical gaps in policy formalization, decision authority, and oversight consistency are limiting board effectiveness. The foundation exists — but requires deliberate architectural work.',
+    'Your board demonstrates clear governance structures across most dimensions, but lacks consistency in strategic challenge, risk supervision, and CEO accountability frameworks. Closing these gaps will move the board from functional to high-performing.',
+    'Your board operates at a high governance maturity level — structured, independent, and strategically effective. The priority is sustaining this architecture through leadership transitions and organizational growth phases.'
+  ];
+
+  var gapsByLevel = [
+    [],
+    [
+      'No formal board charter or terms of reference — governance operates on convention, not structure',
+      'Decision authority between board and management is undefined — creating both overreach and abdication',
+      'Board challenge function is absent — executive proposals are endorsed rather than examined',
+      'No succession planning, CEO evaluation framework, or crisis governance protocols'
+    ],
+    [
+      'Governance documentation exists but is not consistently applied or enforced',
+      'Board independence is partial — conflicts of interest are inadequately managed',
+      'Risk oversight is reactive — no formal risk appetite or enterprise risk framework at board level',
+      'CEO performance accountability lacks structured criteria and documented review cycles'
+    ],
+    [
+      'Challenge function is inconsistent — dependent on individual directors rather than structural practice',
+      'Policy architecture is compliance-driven rather than strategically designed for board effectiveness',
+      'Crisis governance protocols have not been formally tested or documented'
+    ],
+    [
+      'Sustaining governance quality through leadership transitions and organizational growth',
+      'Ensuring structural independence is preserved as board composition evolves'
+    ]
+  ];
+
+  var strengthsByLevel = [
+    [],
+    ['Some board members show commitment to improvement', 'Organization recognizes the need for governance reform'],
+    ['Basic governance documentation is in place', 'Board composition shows intention toward independence', 'Risk awareness exists at leadership level'],
+    ['Formal governance architecture is established and functional', 'Board-management relationship is appropriately delineated', 'Policy framework provides structural accountability'],
+    ['Governance infrastructure is comprehensive and actively enforced', 'Board operates as a genuine strategic asset', 'Risk and succession governance are embedded in board practice', 'Challenge function is structural, not personality-dependent']
+  ];
+
+  var dimPcts = {};
+  dims.forEach(function(d){
+    dimPcts[d.id] = Math.round((dimScores[d.id]/(dimCounts[d.id]*4))*100);
+  });
+
+  var circumference = 2*Math.PI*54;
+  var offset = circumference - (pct/100)*circumference;
+
+  rs.innerHTML = `
+    <div class="results-top">
+      <div class="results-eyebrow">Board Governance Maturity Index — Your Results</div>
+      <div class="maturity-badge">
+        <div class="maturity-level-num" style="color:${tierColor}">L${level}</div>
+        <div class="maturity-info">
+          <div class="maturity-label">Maturity Level ${level} of 4</div>
+          <div class="maturity-name"><em>${levelName}</em></div>
+        </div>
+      </div>
+      <div class="score-wrap">
+        <div class="score-display"><span style="font-size:0.35em;color:var(--muted);vertical-align:top;margin-top:14px;display:inline-block">Score </span>${pct}<span>/ 100</span></div>
+        <div class="score-visual">
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <circle class="score-bg-c" cx="60" cy="60" r="54"/>
+            <circle class="score-fill-c" id="scoreFillC" cx="60" cy="60" r="54" stroke="${tierColor}"
+              style="stroke-dasharray:${circumference};stroke-dashoffset:${circumference}"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <div class="insight-label">Executive Insight</div>
+      <p class="insight-text">${insights[level]}</p>
+    </div>
+
+    <div class="dims-result">
+      <div class="dims-result-title">Governance Maturity by Dimension</div>
+      ${dims.map(function(d){return `
+        <div class="dim-result-item">
+          <div class="dim-result-name">${d.name}</div>
+          <div class="dim-result-bar"><div class="dim-result-fill" data-pct="${dimPcts[d.id]}"></div></div>
+          <div class="dim-result-pct">${dimPcts[d.id]}%</div>
+        </div>
+      `}).join('')}
+    </div>
+
+    <div class="gaps-section">
+      <div class="gaps-title">Key Governance Gaps Identified</div>
+      ${gapsByLevel[level].map(function(g,i){return `
+        <div class="gap-item" id="gap${i}">
+          <div class="gap-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="gap-text">${g}</div>
+        </div>
+      `}).join('')}
+    </div>
+
+    <div class="strengths-section">
+      <div class="strengths-title">Governance Strengths Identified</div>
+      ${strengthsByLevel[level].map(function(s){return `
+        <div class="strength-item">
+          <div class="strength-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="strength-text">${s}</div>
+        </div>
+      `}).join('')}
+    </div>
+
+    <div class="result-cta">
+      <div class="cta-urgency"><div class="cta-urgency-dot"></div>Limited Executive Advisory Sessions Available</div>
+      <h3 class="cta-title">A Full <em>Board Governance Review</em> Is<br>Your Next Strategic Move</h3>
+      <p class="cta-desc">Your full Board Governance Review — including governance gap analysis, role clarity assessment, and a board effectiveness roadmap — is delivered through an Executive Advisory Session with Maya Hotait.</p>
+      <div class="cta-deliverables">
+        <div class="cta-del"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Governance Gap Analysis</div>
+        <div class="cta-del"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Role Clarity Assessment</div>
+        <div class="cta-del"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Board Effectiveness Roadmap</div>
+      </div>
+      <a href="https://mayahotait.com/#contact" class="cta-btn">Request a Governance Review →</a>
+      <p class="cta-authority">Designed exclusively for Board Members, Chairmen, CEOs & CFOs · Advisory across MENA, Africa & Eurasia</p>
+    </div>
+  `;
+
+  setTimeout(function(){
+    var fc = document.getElementById('scoreFillC');
+    if(fc) fc.style.strokeDashoffset = offset;
+  },200);
+
+  setTimeout(function(){
+    document.querySelectorAll('.dim-result-fill').forEach(function(el){
+      el.style.width = el.dataset.pct+'%';
+    });
+  },400);
+
+  setTimeout(function(){
+    gapsByLevel[level].forEach(function(_,i){
+      setTimeout(function(){
+        var el = document.getElementById('gap'+i);
+        if(el) el.classList.add('visible');
+      },i*180);
+    });
+  },700);
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+<!-- MH Intelligence System Banner -->
+<div class="sys-banner">
+  <div class="sys-banner-text">
+    <strong>This tool is part of the MH Strategic Intelligence System™</strong>
+    <span class="sys-banner-sep">·</span>
+    <span>Experience the full intelligence flow</span>
+  </div>
+  <a href="/intelligence.html" class="sys-banner-link">
+    Enter the System
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+</body>
+</html>
