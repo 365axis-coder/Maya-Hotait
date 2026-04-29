@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Organizational Diagnostic — Maya Hotait</title>
+<meta name="description" content="A structured executive diagnostic for boards and leadership teams. Assess governance, decision-making, financial intelligence, and organizational alignment across 10 critical dimensions. By Maya Hotait.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://mayahotait.com/diagnostic.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Executive Organizational Diagnostic — Maya Hotait">
+<meta property="og:description" content="A structured executive diagnostic for boards and leadership teams. Assess governance, decision-making, financial intelligence, and organizational alignment across 10 critical dimensions.">
+<meta property="og:url" content="https://mayahotait.com/diagnostic.html">
+<meta property="og:site_name" content="Maya Hotait — Strategic Advisory">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A4A;
+  --navy2:#152038;
+  --navy3:#152038;
+  --gold:#C8A96E;
+  --gold2:#E2C98F;
+  --gold-light:#F5E6C8;
+  --orange:#E86030;
+  --white:#F8F5EF;
+  --muted:rgba(248,245,239,0.55);
+  --border:rgba(200,169,110,0.2);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Montserrat',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:#152038;
+  color:var(--white);
+  font-family:var(--sans);
+  font-weight:300;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── BACKGROUND ── */
+.bg-grid{
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(200,169,110,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,169,110,0.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;z-index:0;
+}
+.bg-glow{
+  position:fixed;
+  top:-20%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(ellipse,rgba(200,169,110,0.04) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+
+/* ── HEADER ── */
+.site-header{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:16px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(27,42,74,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.header-brand{
+  font-family:var(--serif);
+  font-size:15px;font-weight:300;
+  letter-spacing:3px;color:var(--gold);
+  text-decoration:none;
+}
+.header-back{
+  font-size:9px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+  display:flex;align-items:center;gap:8px;
+  transition:color 0.3s;
+}
+.header-back:hover{color:var(--gold)}
+.header-back svg{width:14px;height:14px;stroke:currentColor}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:1;
+  padding:140px 48px 80px;
+  max-width:900px;margin:0 auto;
+  text-align:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(200,169,110,0.3);
+  padding:8px 18px;margin-bottom:32px;
+}
+.hero-badge::before{
+  content:'';width:6px;height:6px;
+  background:var(--gold);border-radius:50%;
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.5)}}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,58px);
+  font-weight:300;line-height:1.15;
+  letter-spacing:-0.5px;
+  margin-bottom:20px;
+}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{
+  font-size:13px;color:var(--muted);
+  line-height:1.9;max-width:600px;margin:0 auto 40px;
+}
+.hero-meta{
+  display:flex;align-items:center;justify-content:center;
+  gap:32px;flex-wrap:wrap;
+  margin-bottom:56px;
+}
+.hero-meta-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+}
+.hero-meta-item svg{width:12px;height:12px;stroke:var(--gold)}
+.start-btn{
+  font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy);background:var(--gold);
+  border:none;padding:16px 44px;
+  cursor:pointer;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 24px rgba(200,169,110,0.3);
+}
+.start-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,169,110,0.45)}
+
+/* ── PROGRESS ── */
+.progress-wrap{
+  position:relative;z-index:1;
+  max-width:720px;margin:0 auto;
+  padding:0 48px;
+  display:none;
+}
+.progress-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;
+}
+.progress-label{
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+}
+.progress-count{
+  font-family:var(--serif);
+  font-size:13px;color:var(--gold);
+}
+.progress-bar{
+  height:2px;background:rgba(200,169,110,0.15);
+  border-radius:1px;overflow:hidden;
+  margin-bottom:40px;
+}
+.progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+  border-radius:1px;
+  transition:width 0.6s cubic-bezier(0.16,1,0.3,1);
+  width:0%;
+}
+.section-tag{
+  font-size:8px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--orange);
+  margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.section-tag::before{content:'';width:20px;height:1px;background:var(--orange)}
+
+/* ── QUESTION ── */
+.question-wrap{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.5s ease,transform 0.5s ease;
+}
+.question-wrap.visible{opacity:1;transform:translateY(0)}
+.question-text{
+  font-family:var(--serif);
+  font-size:clamp(20px,3vw,28px);
+  font-weight:300;line-height:1.4;
+  color:var(--white);margin-bottom:32px;
+}
+.question-text em{font-style:italic;color:var(--gold-light)}
+
+/* ── OPTIONS ── */
+.options-grid{
+  display:flex;flex-direction:column;gap:10px;
+  margin-bottom:40px;
+}
+.option-btn{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:18px 22px;
+  background:rgba(27,42,74,0.4);
+  border:1px solid rgba(200,169,110,0.15);
+  cursor:pointer;text-align:left;
+  transition:all 0.25s ease;
+  font-family:var(--sans);
+  position:relative;overflow:hidden;
+}
+.option-btn::before{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;
+  width:0;
+  background:linear-gradient(90deg,rgba(200,169,110,0.15),transparent);
+  transition:width 0.3s ease;
+}
+.option-btn:hover::before,.option-btn.selected::before{width:100%}
+.option-btn:hover,.option-btn.selected{
+  border-color:rgba(200,169,110,0.5);
+  background:rgba(27,42,74,0.7);
+}
+.option-btn.selected{border-color:var(--gold)}
+.option-letter{
+  width:28px;height:28px;flex-shrink:0;
+  border:1px solid rgba(200,169,110,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:600;letter-spacing:1px;
+  color:var(--gold);margin-top:1px;
+  transition:all 0.25s ease;
+}
+.option-btn.selected .option-letter{
+  background:var(--gold);color:var(--navy);border-color:var(--gold);
+}
+.option-content{}
+.option-main{
+  font-size:12px;font-weight:400;
+  color:var(--white);line-height:1.5;
+  margin-bottom:3px;
+}
+.option-sub{
+  font-size:10px;color:var(--muted);line-height:1.4;
+}
+
+/* ── NAV BUTTONS ── */
+.q-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:24px;border-top:1px solid var(--border);
+}
+.btn-prev{
+  font-size:9px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+  background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+  transition:color 0.3s;font-family:var(--sans);
+}
+.btn-prev:hover{color:var(--gold)}
+.btn-prev svg{width:14px;height:14px;stroke:currentColor}
+.btn-next{
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy);
+  background:var(--gold);border:none;
+  padding:12px 28px;cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+  transition:background 0.3s,transform 0.2s;
+  font-family:var(--sans);
+  opacity:0.4;pointer-events:none;
+}
+.btn-next.active{opacity:1;pointer-events:all}
+.btn-next.active:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-next svg{width:14px;height:14px;stroke:currentColor}
+
+/* ── RESULTS ── */
+.results-wrap{
+  position:relative;z-index:1;
+  max-width:800px;margin:0 auto;
+  padding:100px 48px 80px;
+  display:none;
+}
+.results-header{text-align:center;margin-bottom:64px}
+.results-label{
+  font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:16px;
+}
+
+/* Score Circle */
+.score-circle-wrap{
+  display:flex;justify-content:center;margin-bottom:40px;
+}
+.score-circle{
+  position:relative;
+  width:160px;height:160px;
+}
+.score-circle svg{transform:rotate(-90deg)}
+.score-bg{fill:none;stroke:rgba(200,169,110,0.1);stroke-width:6}
+.score-fill{
+  fill:none;stroke-width:6;
+  stroke-linecap:round;
+  stroke-dasharray:440;
+  stroke-dashoffset:440;
+  transition:stroke-dashoffset 2s cubic-bezier(0.16,1,0.3,1) 0.5s;
+}
+.score-text{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.score-num{
+  font-family:var(--serif);
+  font-size:46px;font-weight:300;color:var(--white);
+  line-height:1;
+}
+.score-denom{
+  font-size:9px;letter-spacing:2px;color:var(--muted);
+  margin-top:4px;
+}
+.score-label-badge{
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;padding:4px 12px;
+  margin-top:6px;
+}
+
+/* Tier colors */
+.tier-critical .score-fill{stroke:#E86030}
+.tier-critical .score-label-badge{color:#E86030;border:1px solid rgba(232,96,48,0.4);background:rgba(232,96,48,0.08)}
+.tier-moderate .score-fill{stroke:#C8A96E}
+.tier-moderate .score-label-badge{color:var(--gold);border:1px solid rgba(200,169,110,0.4);background:rgba(200,169,110,0.08)}
+.tier-strong .score-fill{stroke:#5B8E6A}
+.tier-strong .score-label-badge{color:#7BC48A;border:1px solid rgba(91,142,106,0.4);background:rgba(91,142,106,0.08)}
+
+.results-title{
+  font-family:var(--serif);
+  font-size:clamp(24px,4vw,38px);
+  font-weight:300;line-height:1.2;
+  margin-bottom:12px;
+}
+.results-title em{font-style:italic;color:var(--gold)}
+
+/* Executive Insight */
+.insight-box{
+  background:rgba(27,42,74,0.5);
+  border:1px solid rgba(200,169,110,0.2);
+  border-left:3px solid var(--gold);
+  padding:24px 28px;margin-bottom:40px;
+  position:relative;
+}
+.insight-box::before{
+  content:'"';
+  font-family:var(--serif);
+  font-size:60px;color:rgba(200,169,110,0.1);
+  line-height:0.7;position:absolute;
+  top:16px;left:16px;
+}
+.insight-label{
+  font-size:8px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:12px;
+}
+.insight-text{
+  font-family:var(--serif);
+  font-size:17px;font-weight:300;font-style:italic;
+  color:var(--white);line-height:1.7;
+  position:relative;z-index:1;
+}
+
+/* Red Flags */
+.flags-section{margin-bottom:40px}
+.flags-title{
+  font-size:9px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.flags-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.flag-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 18px;margin-bottom:8px;
+  background:rgba(232,96,48,0.06);
+  border:1px solid rgba(232,96,48,0.2);
+  border-left:2px solid var(--orange);
+  opacity:0;transform:translateX(-12px);
+  transition:opacity 0.4s ease,transform 0.4s ease;
+}
+.flag-item.visible{opacity:1;transform:translateX(0)}
+.flag-icon{
+  width:18px;height:18px;flex-shrink:0;
+  color:var(--orange);margin-top:1px;
+}
+.flag-icon svg{width:18px;height:18px;stroke:currentColor}
+.flag-text{font-size:12px;color:var(--white);line-height:1.5}
+
+/* Dimension Bars */
+.dims-section{margin-bottom:48px}
+.dims-title{
+  font-size:9px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;
+}
+.dims-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.dim-item{margin-bottom:16px}
+.dim-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:8px;
+}
+.dim-name{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--white)}
+.dim-score{font-family:var(--serif);font-size:14px;color:var(--gold)}
+.dim-bar{height:3px;background:rgba(200,169,110,0.1);border-radius:2px;overflow:hidden}
+.dim-fill{
+  height:100%;border-radius:2px;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+  width:0%;
+  transition:width 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Preview Section */
+.preview-section{
+  background:rgba(27,42,74,0.3);
+  border:1px solid var(--border);
+  padding:32px;margin-bottom:40px;
+  position:relative;overflow:hidden;
+}
+.preview-blur{
+  position:absolute;bottom:0;left:0;right:0;height:60%;
+  background:linear-gradient(transparent,rgba(15,24,40,0.95));
+  pointer-events:none;z-index:2;
+}
+.preview-label{
+  font-size:8px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:16px;
+}
+.preview-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:10px 0;border-bottom:1px solid rgba(200,169,110,0.08);
+  opacity:0.4;
+}
+.preview-item:nth-child(2){opacity:0.25}
+.preview-item:nth-child(3){opacity:0.15}
+.preview-dot{
+  width:6px;height:6px;background:var(--gold);
+  border-radius:50%;flex-shrink:0;margin-top:5px;
+}
+.preview-text{font-size:11px;color:var(--muted);line-height:1.5}
+
+/* CTA Box */
+.cta-box{
+  background:linear-gradient(135deg,rgba(27,42,74,0.8),rgba(21,32,56,0.9));
+  border:1px solid rgba(200,169,110,0.25);
+  padding:44px 40px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--gold),transparent);
+}
+.cta-urgency{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:8px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--orange);
+  margin-bottom:20px;
+}
+.cta-urgency::before{
+  content:'';width:6px;height:6px;
+  background:var(--orange);border-radius:50%;
+  animation:pulse 1.5s ease-in-out infinite;
+}
+.cta-title{
+  font-family:var(--serif);
+  font-size:clamp(20px,3vw,28px);
+  font-weight:300;line-height:1.3;
+  color:var(--white);margin-bottom:12px;
+}
+.cta-title em{font-style:italic;color:var(--gold)}
+.cta-desc{
+  font-size:12px;color:var(--muted);
+  line-height:1.8;max-width:500px;
+  margin:0 auto 28px;
+}
+.cta-includes{
+  display:flex;justify-content:center;gap:24px;
+  flex-wrap:wrap;margin-bottom:32px;
+}
+.cta-include-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.cta-include-item svg{width:12px;height:12px;stroke:var(--gold)}
+.cta-btn{
+  font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy);background:var(--gold);
+  border:none;padding:16px 44px;
+  cursor:pointer;display:inline-block;
+  text-decoration:none;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 24px rgba(200,169,110,0.35);
+}
+.cta-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(200,169,110,0.5)}
+.cta-authority{
+  margin-top:20px;
+  font-size:9px;color:var(--muted);
+  letter-spacing:1px;font-style:italic;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .site-header{padding:14px 20px}
+  .hero{padding:110px 20px 60px}
+  .progress-wrap{padding:0 20px}
+  .results-wrap{padding:100px 20px 60px}
+  .cta-box{padding:32px 20px}
+  .cta-includes{flex-direction:column;align-items:center;gap:12px}
+}
+
+/* ══ LEAD CAPTURE ══ */
+.lead-section{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:100px 48px 80px;
+}
+.lead-wrap{
+  max-width:680px;width:100%;
+  margin:0 auto;text-align:center;
+}
+.lead-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(200,169,110,0.3);
+  padding:8px 18px;margin-bottom:28px;
+}
+.lead-badge-dot{
+  width:6px;height:6px;
+  background:var(--gold);border-radius:50%;
+  animation:pulse 1.5s ease-in-out infinite;
+}
+.lead-title{
+  font-family:var(--serif);
+  font-size:clamp(28px,4vw,42px);
+  font-weight:300;line-height:1.2;
+  margin-bottom:14px;
+}
+.lead-title em{font-style:italic;color:var(--gold)}
+.lead-desc{
+  font-size:12px;color:var(--muted);
+  line-height:1.8;margin-bottom:32px;
+}
+/* Preview blurred bars */
+.lead-preview-scores{
+  position:relative;
+  background:rgba(27,42,74,0.4);
+  border:1px solid var(--border);
+  padding:20px 24px;margin-bottom:36px;
+  overflow:hidden;
+}
+.lead-preview-item{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:10px;
+}
+.lead-preview-item:last-child{margin-bottom:0}
+.lead-preview-item span{
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+  width:80px;text-align:left;flex-shrink:0;
+}
+.lead-preview-bar{
+  height:3px;flex:1;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+  border-radius:2px;width:65%;
+  filter:blur(0px);
+}
+.lead-blur{
+  position:absolute;inset:0;
+  background:linear-gradient(transparent 30%,rgba(27,42,74,0.97));
+  pointer-events:none;
+}
+/* Form */
+.lead-form{text-align:left;margin-bottom:24px}
+.lead-form-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:14px;margin-bottom:14px;
+}
+.lead-fg{display:flex;flex-direction:column;gap:7px}
+.lead-fg label{
+  font-size:9px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);
+}
+.lead-fg input,.lead-fg select{
+  background:rgba(27,42,74,0.5);
+  border:1px solid rgba(200,169,110,0.2);
+  color:var(--white);
+  font-family:var(--sans);font-size:12px;
+  font-weight:300;padding:12px 16px;
+  transition:border-color 0.3s;
+  outline:none;
+  -webkit-appearance:none;
+}
+.lead-fg input::placeholder{color:rgba(248,245,239,0.3)}
+.lead-fg input:focus,.lead-fg select:focus{border-color:var(--gold)}
+.lead-fg select option{background:var(--navy2);color:var(--white)}
+.lead-privacy{
+  display:flex;align-items:center;gap:8px;
+  font-size:9px;color:var(--muted);
+  letter-spacing:1px;margin-bottom:20px;
+  font-style:italic;
+}
+.lead-submit-btn{
+  width:100%;
+  font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy);background:var(--gold);
+  border:none;padding:16px;
+  cursor:pointer;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 24px rgba(200,169,110,0.3);
+}
+.lead-submit-btn:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 32px rgba(200,169,110,0.45)}
+/* Authority */
+.lead-authority{
+  display:flex;justify-content:center;
+  gap:24px;flex-wrap:wrap;
+}
+.lead-auth-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.lead-auth-item svg{stroke:var(--gold)}
+@media(max-width:768px){
+  .lead-section{padding:100px 20px 60px}
+  .lead-form-row{grid-template-columns:1fr}
+}
+
+.sys-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:rgba(21,32,56,0.97);
+  border-top:1px solid rgba(200,169,110,0.2);
+  backdrop-filter:blur(20px);
+  padding:12px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;
+}
+.sys-banner::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--gold),transparent);
+}
+.sys-banner-text{
+  font-size:11px;color:var(--muted);
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.sys-banner-text strong{
+  color:var(--white);font-weight:400;
+  font-family:var(--serif);font-size:13px;font-style:italic;
+}
+.sys-banner-sep{color:rgba(200,169,110,0.3)}
+.sys-banner-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy);
+  background:var(--gold);padding:9px 20px;
+  text-decoration:none;white-space:nowrap;flex-shrink:0;
+  transition:background 0.3s;
+}
+.sys-banner-link:hover{background:var(--gold2)}
+.sys-banner-link svg{width:12px;height:12px;stroke:var(--navy)}
+@media(max-width:768px){
+  .sys-banner{padding:10px 16px;flex-direction:column;gap:10px}
+  .sys-banner-link{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://mayahotait.com" class="header-brand">Maya Hotait</a>
+  <a href="https://mayahotait.com" class="header-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Website
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="heroSection">
+  <div class="hero-badge">Executive Diagnostic Tool</div>
+  <h1>Is Your Organization <em>Structurally Aligned</em> —<br>or Operating Under Hidden Gaps?</h1>
+  <p class="hero-desc">Answer a set of executive-level questions to assess how your organization is structured, how decisions are made, and where performance may be constrained — before a single consultant enters the room.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      8–10 Minutes
+    </div>
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      CEOs, CFOs & Board Leaders
+    </div>
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Instant Score & Insights
+    </div>
+  </div>
+  <button class="start-btn" onclick="startDiagnostic()">Begin Executive Diagnostic →</button>
+  <p style="margin-top:16px;font-size:9px;color:var(--muted);letter-spacing:1.5px;font-style:italic">Based on real-world restructuring and advisory experience across MENA, Africa & Eurasia</p>
+</section>
+
+<!-- PROGRESS + QUESTIONS -->
+<div class="progress-wrap" id="questionSection">
+  <div class="progress-header">
+    <span class="progress-label" id="sectionLabel">Governance & Decision Making</span>
+    <span class="progress-count" id="qCount">1 / 10</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="question-wrap" id="questionWrap">
+    <div class="section-tag" id="sectionTag">Governance</div>
+    <p class="question-text" id="questionText"></p>
+    <div class="options-grid" id="optionsGrid"></div>
+    <div class="q-nav">
+      <button class="btn-prev" id="btnPrev" onclick="prevQuestion()">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Previous
+      </button>
+      <button class="btn-next" id="btnNext" onclick="nextQuestion()">
+        Next
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- LEAD CAPTURE -->
+<div class="lead-section" id="leadSection" style="display:none">
+  <div class="lead-wrap">
+    <div class="lead-badge">
+      <span class="lead-badge-dot"></span>
+      Your Diagnostic Is Ready
+    </div>
+    <h2 class="lead-title">Your <em>Executive Diagnostic Report</em><br>Has Been Generated</h2>
+    <p class="lead-desc">Enter your details to unlock your personalized score, red flags, and dimension analysis — delivered instantly.</p>
+    
+    <div class="lead-preview-scores">
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar"></div>
+        <span>Governance</span>
+      </div>
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar" style="width:55%"></div>
+        <span>Structure</span>
+      </div>
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar" style="width:70%"></div>
+        <span>Finance</span>
+      </div>
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar" style="width:45%"></div>
+        <span>Leadership</span>
+      </div>
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar" style="width:60%"></div>
+        <span>Strategy</span>
+      </div>
+      <div class="lead-blur"></div>
+    </div>
+
+    <form class="lead-form" onsubmit="submitLead(event)">
+      <div class="lead-form-row">
+        <div class="lead-fg">
+          <label>Full Name *</label>
+          <input type="text" id="leadName" placeholder="Your full name" required>
+        </div>
+        <div class="lead-fg">
+          <label>Email Address *</label>
+          <input type="email" id="leadEmail" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="lead-form-row">
+        <div class="lead-fg">
+          <label>Organisation *</label>
+          <input type="text" id="leadCompany" placeholder="Company or institution" required>
+        </div>
+        <div class="lead-fg">
+          <label>Your Role</label>
+          <select id="leadRole">
+            <option value="" disabled selected>Select your role</option>
+            <option>CEO / Managing Director</option>
+            <option>CFO / Finance Director</option>
+            <option>Board Member / Chairman</option>
+            <option>COO / Operations Director</option>
+            <option>Strategy Director</option>
+            <option>Other Executive</option>
+          </select>
+        </div>
+      </div>
+      <div class="lead-privacy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your information is confidential and will only be used to send you your diagnostic report.
+      </div>
+      <button type="submit" class="lead-submit-btn" id="leadSubmitBtn">
+        Unlock My Diagnostic Report →
+      </button>
+    </form>
+
+    <div class="lead-authority">
+      <div class="lead-auth-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+        Instant results — no waiting
+      </div>
+      <div class="lead-auth-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+        No spam, ever
+      </div>
+      <div class="lead-auth-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+        Based on 20+ years advisory experience
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results-wrap" id="resultsSection"></div>
+
+<script>
+var questions = [
+  {
+    section:"Governance & Decision Making",
+    tag:"Governance",
+    text:"When a major strategic decision is needed, how would you describe the <em>clarity of ownership</em> at the leadership level?",
+    options:[
+      {letter:"A",main:"Decisions are owned, delegated, and executed with clear accountability structures.",sub:"Role clarity exists at every level of the decision chain.",score:4},
+      {letter:"B",main:"Ownership is generally understood but occasionally overlaps between functions.",sub:"Some ambiguity arises during cross-functional decisions.",score:3},
+      {letter:"C",main:"Decision-making is centralized but not always structured — it depends on the situation.",sub:"Leadership involvement is inconsistent.",score:2},
+      {letter:"D",main:"Decisions are made reactively, often without defined ownership or structured process.",sub:"Accountability is unclear and rarely documented.",score:1}
+    ]
+  },
+  {
+    section:"Governance & Decision Making",
+    tag:"Governance",
+    text:"How would you assess your board or leadership team's <em>visibility into operational performance</em> — beyond financial metrics?",
+    options:[
+      {letter:"A",main:"We have real-time governance dashboards covering operational, financial, and strategic KPIs.",sub:"Board reporting is structured, timely, and action-oriented.",score:4},
+      {letter:"B",main:"Reporting exists but is primarily financial — operational health is assessed informally.",sub:"Some blind spots exist at the governance level.",score:3},
+      {letter:"C",main:"Leadership visibility is limited to periodic reports and informal updates.",sub:"No structured governance intelligence framework exists.",score:2},
+      {letter:"D",main:"Leadership relies on verbal briefings and reactive information.",sub:"There is no systematic visibility framework in place.",score:1}
+    ]
+  },
+  {
+    section:"Structural Alignment",
+    tag:"Structure",
+    text:"How well does your current <em>organizational structure</em> reflect your strategic priorities for the next 3 years?",
+    options:[
+      {letter:"A",main:"Structure was deliberately designed around our strategic direction.",sub:"Roles, teams, and reporting lines are aligned with growth objectives.",score:4},
+      {letter:"B",main:"Structure broadly supports our strategy, though some functions are misaligned.",sub:"We operate with minor inefficiencies due to legacy design.",score:3},
+      {letter:"C",main:"Our structure evolved organically and was never formally redesigned.",sub:"There is visible tension between what the structure supports and what strategy demands.",score:2},
+      {letter:"D",main:"Structure is reactive — built around personalities and historical roles rather than strategic intent.",sub:"There is significant misalignment between design and direction.",score:1}
+    ]
+  },
+  {
+    section:"Structural Alignment",
+    tag:"Structure",
+    text:"When performance gaps appear, how does your organization typically <em>diagnose the root cause</em>?",
+    options:[
+      {letter:"A",main:"We use structured diagnostic frameworks to separate symptoms from root causes.",sub:"Root cause analysis is embedded in our performance review cycle.",score:4},
+      {letter:"B",main:"We investigate performance gaps but analysis is often surface-level.",sub:"Root cause identification is inconsistent across teams.",score:3},
+      {letter:"C",main:"Performance gaps are addressed through immediate fixes rather than structural diagnosis.",sub:"We treat symptoms without examining the underlying cause.",score:2},
+      {letter:"D",main:"Performance gaps are rarely analyzed — we respond to urgency, not cause.",sub:"There is no formal diagnostic process at any level.",score:1}
+    ]
+  },
+  {
+    section:"Financial Clarity & Control",
+    tag:"Finance",
+    text:"How would you characterize your organization's <em>financial intelligence</em> — beyond tracking revenue and expenses?",
+    options:[
+      {letter:"A",main:"We operate with real-time financial visibility, rolling forecasts, and scenario-based planning.",sub:"Finance functions as a strategic control system, not a reporting function.",score:4},
+      {letter:"B",main:"Financial reporting is structured, but forward-looking intelligence is limited.",sub:"We rely on monthly reports — not predictive financial insight.",score:3},
+      {letter:"C",main:"Financial tracking is operational — we monitor cash flow and costs reactively.",sub:"Strategic financial planning is limited or absent.",score:2},
+      {letter:"D",main:"Financial management is basic — revenue and expense tracking only.",sub:"No forecasting, cost architecture, or financial strategy framework exists.",score:1}
+    ]
+  },
+  {
+    section:"Financial Clarity & Control",
+    tag:"Finance",
+    text:"To what extent does your organization have a <em>strong internal control environment</em> — including audit, compliance, and risk oversight?",
+    options:[
+      {letter:"A",main:"Internal audit is active, independent, and embedded in governance.",sub:"Risk management and compliance frameworks are operational and reviewed regularly.",score:4},
+      {letter:"B",main:"Some internal controls exist but are not consistently enforced or reviewed.",sub:"Risk oversight is present but not systematically integrated.",score:3},
+      {letter:"C",main:"Internal controls are minimal — compliance is handled reactively.",sub:"Audit and risk functions are either absent or decorative.",score:2},
+      {letter:"D",main:"There are no formal internal controls in place.",sub:"Risk and compliance are managed informally or not at all.",score:1}
+    ]
+  },
+  {
+    section:"Leadership & Execution",
+    tag:"Leadership",
+    text:"How would you assess the <em>alignment between your leadership team</em> on strategic priorities and execution accountability?",
+    options:[
+      {letter:"A",main:"Leadership is fully aligned — strategy, priorities, and accountability are shared and documented.",sub:"There is no ambiguity around who owns what outcome.",score:4},
+      {letter:"B",main:"Leadership is broadly aligned, though execution accountability varies by function.",sub:"Some friction exists in cross-functional ownership.",score:3},
+      {letter:"C",main:"Leadership alignment is surface-level — agreement in meetings, divergence in execution.",sub:"Priorities shift based on individual interpretation.",score:2},
+      {letter:"D",main:"Leadership team operates in silos with different interpretations of strategy.",sub:"Execution accountability is largely undefined.",score:1}
+    ]
+  },
+  {
+    section:"Leadership & Execution",
+    tag:"Leadership",
+    text:"How does your organization handle <em>execution under pressure</em> — when market conditions change or internal crises emerge?",
+    options:[
+      {letter:"A",main:"We have defined crisis protocols and scenario plans that activate immediately.",sub:"Execution remains structured even under volatility.",score:4},
+      {letter:"B",main:"We adapt quickly, but improvisation often replaces structured response.",sub:"No formal protocols — but leadership experience compensates.",score:3},
+      {letter:"C",main:"Crisis response is reactive and often chaotic.",sub:"We default to cost-cutting without strategic analysis.",score:2},
+      {letter:"D",main:"Pressure exposes severe structural weaknesses.",sub:"Decision-making collapses and execution stalls under stress.",score:1}
+    ]
+  },
+  {
+    section:"Strategic Clarity",
+    tag:"Strategy",
+    text:"How clearly is your organizational <em>strategy communicated</em> — from board level to operational teams?",
+    options:[
+      {letter:"A",main:"Strategy is translated into operational objectives at every level.",sub:"Employees understand how their work connects to organizational direction.",score:4},
+      {letter:"B",main:"Strategy is clear at the leadership level but loses clarity in translation.",sub:"Operational teams work from directives, not strategic understanding.",score:3},
+      {letter:"C",main:"Strategy exists at the executive level but is rarely communicated downward.",sub:"There is a significant gap between strategic intent and operational reality.",score:2},
+      {letter:"D",main:"There is no clearly articulated strategy — direction shifts frequently.",sub:"Teams operate without strategic context.",score:1}
+    ]
+  },
+  {
+    section:"Strategic Clarity",
+    tag:"Strategy",
+    text:"What best describes your organization's <em>readiness for transformation</em> — whether restructuring, scaling, or market repositioning?",
+    options:[
+      {letter:"A",main:"We have the structural, financial, and leadership foundations to absorb transformation.",sub:"Change initiatives are well-governed and systematically executed.",score:4},
+      {letter:"B",main:"We are capable of transformation but lack the governance architecture to sustain it.",sub:"Change is initiated but rarely embedded at the structural level.",score:3},
+      {letter:"C",main:"Transformation attempts have been made but disrupted by structural or political resistance.",sub:"We initiate change, but lose momentum quickly.",score:2},
+      {letter:"D",main:"The organization is not ready for transformation.",sub:"Current structural, financial, or leadership conditions would destabilize any change effort.",score:1}
+    ]
+  }
+];
+
+var currentQ = 0;
+var answers = new Array(questions.length).fill(null);
+
+function startDiagnostic(){
+  document.getElementById('heroSection').style.display='none';
+  document.getElementById('questionSection').style.display='block';
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const q = questions[currentQ];
+  document.getElementById('sectionLabel').textContent = q.section;
+  document.getElementById('sectionTag').textContent = q.tag;
+  document.getElementById('qCount').textContent = (currentQ+1) + ' / ' + questions.length;
+  document.getElementById('progressFill').style.width = ((currentQ)/questions.length*100) + '%';
+  document.getElementById('questionText').innerHTML = q.text;
+  document.getElementById('btnPrev').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
+
+  const nextBtn = document.getElementById('btnNext');
+  nextBtn.textContent = currentQ === questions.length-1 ? 'View My Results' : 'Next';
+  if(currentQ === questions.length-1){
+    nextBtn.innerHTML = 'View My Results <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+  } else {
+    nextBtn.innerHTML = 'Next <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+  }
+
+  const grid = document.getElementById('optionsGrid');
+  grid.innerHTML = '';
+  q.options.forEach((opt,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'option-btn' + (answers[currentQ]===i?' selected':'');
+    btn.innerHTML = `<div class="option-letter">${opt.letter}</div><div class="option-content"><div class="option-main">${opt.main}</div><div class="option-sub">${opt.sub}</div></div>`;
+    btn.onclick = ()=>selectOption(i);
+    grid.appendChild(btn);
+  });
+
+  updateNextBtn();
+  const wrap = document.getElementById('questionWrap');
+  wrap.classList.remove('visible');
+  setTimeout(()=>wrap.classList.add('visible'),50);
+}
+
+function selectOption(i){
+  answers[currentQ] = i;
+  document.querySelectorAll('.option-btn').forEach((b,j)=>{
+    b.classList.toggle('selected',j===i);
+  });
+  updateNextBtn();
+}
+
+function updateNextBtn(){
+  const btn = document.getElementById('btnNext');
+  btn.classList.toggle('active', answers[currentQ]!==null);
+}
+
+function nextQuestion(){
+  if(answers[currentQ]===null) return;
+  if(currentQ < questions.length-1){
+    currentQ++;
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function prevQuestion(){
+  if(currentQ > 0){currentQ--;renderQuestion();}
+}
+
+function showResults(){
+  document.getElementById('questionSection').style.display='none';
+  document.getElementById('leadSection').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function submitLead(e){
+  e.preventDefault();
+  var btn = document.getElementById('leadSubmitBtn');
+  var name = document.getElementById('leadName').value;
+  var email = document.getElementById('leadEmail').value;
+  var company = document.getElementById('leadCompany').value;
+  var role = document.getElementById('leadRole').value;
+
+  btn.textContent = 'Generating your report...';
+  btn.style.opacity = '0.7';
+
+  // Build answers summary
+  var answersSummary = '';
+  questions.forEach(function(q,i){
+    if(answers[i]!==null){
+      answersSummary += q.section + ': ' + q.options[answers[i]].main + ' | ';
+    }
+  });
+
+  // Calculate score for email
+  var totalScore = 0;
+  questions.forEach(function(q,i){
+    if(answers[i]!==null) totalScore += q.options[answers[i]].score;
+  });
+  var pct = Math.round((totalScore/(questions.length*4))*100);
+  var tier = pct>=75?'Well-Structured':pct>=50?'Gaps Detected':'Critical Risk';
+
+  // Send to Web3Forms
+  var formData = new FormData();
+  formData.append('access_key','bc54ec16-ba1b-45d7-9089-201f01ed157d');
+  formData.append('subject','New Executive Diagnostic — ' + name + ' | Score: ' + pct + '/100');
+  formData.append('from_name','Maya Hotait Diagnostic Tool');
+  formData.append('name', name);
+  formData.append('email', email);
+  formData.append('company', company);
+  formData.append('role', role);
+  formData.append('diagnostic_score', pct + '/100 — ' + tier);
+  formData.append('answers', answersSummary);
+
+  
+  // ── Auto-save to MH CRM ──
+  (function saveToCRM() {
+    var lead = {
+      name: name, email: email, company: company, role: role,
+      source: 'diagnostic',
+      score: String(pct),
+      level: tier,
+      track: 'Organizational',
+      insight: 'Executive Diagnostic completed — ' + tier,
+      dimensions: answersSummary,
+      status: 'new', priority: 'low', deal: 'low',
+      next_action: 'Follow-up',
+      date: new Date().toISOString()
+    };
+    fetch('https://ztmgubjyuiztkqlnlpqp.supabase.co/rest/v1/leads', {
+      method: 'POST',
+      headers: {
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0bWd1Ymp5dWl6dGtxbG5scHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxNTI2MDcsImV4cCI6MjA5MTcyODYwN30.EKqyk11npZ0zb4zuugswrxS9zW-rF9_Hz4raux4BiOQ',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0bWd1Ymp5dWl6dGtxbG5scHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxNTI2MDcsImV4cCI6MjA5MTcyODYwN30.EKqyk11npZ0zb4zuugswrxS9zW-rF9_Hz4raux4BiOQ',
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(lead)
+    }).catch(function(e) { console.warn('CRM save failed:', e); });
+  })();
+
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:formData})
+    .catch(function(err){ console.log('Form error',err); });
+
+  // Show results immediately
+  document.getElementById('leadSection').style.display='none';
+  var rs = document.getElementById('resultsSection');
+  rs.style.display='block';
+
+  // Calculate scores
+  var totalScore = 0;
+  const dimScores = {Governance:0,Structure:0,Finance:0,Leadership:0,Strategy:0};
+  const dimCounts = {Governance:0,Structure:0,Finance:0,Leadership:0,Strategy:0};
+
+  questions.forEach((q,i)=>{
+    if(answers[i]!==null){
+      const s = q.options[answers[i]].score;
+      totalScore += s;
+      dimScores[q.tag] += s;
+      dimCounts[q.tag]++;
+    }
+  });
+
+  var maxScore = questions.length * 4;
+  var pct = Math.round((totalScore/maxScore)*100);
+
+  // Dimension percentages
+  var dims = Object.keys(dimScores).map(k=>({
+    name:k,
+    pct:Math.round((dimScores[k]/(dimCounts[k]*4))*100)
+  }));
+
+  // Tier
+  var tier, tierLabel, tierColor, insightText, flags;
+  if(pct >= 75){
+    tier='tier-strong'; tierLabel='Well-Structured';
+    insightText = `Your organization demonstrates strong structural foundations — governance is visible, decisions are owned, and financial controls are active. The priority now is sustaining this architecture through growth and proactively closing the remaining gaps before they compound under pressure.`;
+    flags = [
+      "Maintain governance discipline as scale increases — high-performing structures often erode during rapid growth phases.",
+      "Ensure leadership alignment is formally documented, not only culturally assumed.",
+      "Build scenario-readiness into your strategic planning cycle before the next disruption cycle."
+    ];
+  } else if(pct >= 50){
+    tier='tier-moderate'; tierLabel='Gaps Detected';
+    insightText = `Your organization shows recognizable structure, but critical gaps in governance visibility, decision ownership, or financial intelligence are constraining execution. Without deliberate intervention, these gaps will widen — particularly under growth pressure or market disruption.`;
+    flags = [
+      dims.sort((a,b)=>a.pct-b.pct)[0].name + " shows the highest risk — this is where structural misalignment is most likely surfacing in execution.",
+      "Decision ownership ambiguity is likely creating invisible friction between leadership and operational teams.",
+      "Financial oversight may be reactive rather than strategic — a critical vulnerability during transformation or crisis."
+    ];
+  } else {
+    tier='tier-critical'; tierLabel='Critical Risk';
+    insightText = `Your diagnostic results indicate significant structural misalignment at multiple levels — governance, financial control, and strategic execution are not operating as an integrated system. Without structural intervention, performance constraints will compound and become increasingly difficult to reverse.`;
+    flags = [
+      "Structural misalignment between leadership intent and organizational design is creating invisible resistance to execution.",
+      "Governance visibility gaps are leaving leadership exposed — decisions are being made without adequate intelligence.",
+      "Financial controls and internal audit functions require urgent review — current exposure is higher than visible."
+    ];
+  }
+
+  // Render
+  rs.innerHTML = `
+    <div class="results-header">
+      <div class="results-label">Your Executive Diagnostic Results</div>
+      <div class="score-circle-wrap">
+        <div class="score-circle ${tier}">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle class="score-bg" cx="80" cy="80" r="70"/>
+            <circle class="score-fill" id="scoreFill" cx="80" cy="80" r="70"/>
+          </svg>
+          <div class="score-text">
+            <div class="score-num" id="scoreNum">0</div>
+            <div class="score-denom">/ 100</div>
+            <div class="score-label-badge">${tierLabel}</div>
+          </div>
+        </div>
+      </div>
+      <h2 class="results-title">Your Organization Has <em>Visible Gaps</em><br>That Require Strategic Attention</h2>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">Executive Insight</div>
+      <p class="insight-text">${insightText}</p>
+    </div>
+
+    <div class="flags-section">
+      <div class="flags-title">Key Red Flags Identified</div>
+      ${flags.map((f,i)=>`
+        <div class="flag-item" id="flag${i}">
+          <div class="flag-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="flag-text">${f}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="dims-section">
+      <div class="dims-title">Performance by Dimension</div>
+      ${dims.map(d=>`
+        <div class="dim-item">
+          <div class="dim-header">
+            <span class="dim-name">${d.name}</span>
+            <span class="dim-score">${d.pct}%</span>
+          </div>
+          <div class="dim-bar"><div class="dim-fill" data-pct="${d.pct}"></div></div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="preview-section">
+      <div class="preview-label">Full Diagnostic Report — Preview Only</div>
+      <div class="preview-item"><div class="preview-dot"></div><div class="preview-text">Root cause analysis across all 5 structural dimensions with priority ranking</div></div>
+      <div class="preview-item"><div class="preview-dot"></div><div class="preview-text">Decision gap mapping — where authority breaks down and accountability diffuses</div></div>
+      <div class="preview-item"><div class="preview-dot"></div><div class="preview-text">Tailored restructuring roadmap with phased intervention priorities</div></div>
+      <div class="preview-blur"></div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-urgency">Limited Availability — Executive Sessions</div>
+      <h3 class="cta-title">Your Full Diagnostic Report is Available<br>Through a <em>90-Minute Executive Assessment</em></h3>
+      <p class="cta-desc">Including root cause analysis, decision gap mapping, and a tailored restructuring roadmap — delivered by Maya Hotait based on your specific diagnostic results.</p>
+      <div class="cta-includes">
+        <div class="cta-include-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Root Cause Analysis</div>
+        <div class="cta-include-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Decision Gap Mapping</div>
+        <div class="cta-include-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Restructuring Roadmap</div>
+      </div>
+      <a href="https://mayahotait.com/#contact" class="cta-btn">Book Your Executive Session →</a>
+      <p class="cta-authority">Designed for CEOs, CFOs, and Board Leaders navigating complexity or transformation · Based on real-world advisory experience across MENA, Africa & Eurasia</p>
+    </div>
+  `;
+
+  // Animate score counter
+  var count = 0;
+  var target = pct;
+  var interval = setInterval(()=>{
+    count += 2;
+    if(count >= target){count=target;clearInterval(interval);}
+    document.getElementById('scoreNum').textContent = count;
+  },30);
+
+  // Animate score circle
+  setTimeout(()=>{
+    var circ = document.getElementById('scoreFill');
+    var r = 70;
+    var circumference = 2*Math.PI*r;
+    circ.style.strokeDasharray = circumference;
+    circ.style.strokeDashoffset = circumference - (pct/100)*circumference;
+  },100);
+
+  // Animate flags
+  setTimeout(()=>{
+    flags.forEach((_,i)=>{
+      setTimeout(()=>{
+        const el = document.getElementById('flag'+i);
+        if(el) el.classList.add('visible');
+      }, i*200);
+    });
+  },600);
+
+  // Animate dimension bars
+  setTimeout(()=>{
+    document.querySelectorAll('.dim-fill').forEach(el=>{
+      el.style.width = el.dataset.pct + '%';
+    });
+  },800);
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+<!-- MH Intelligence System Banner -->
+<div class="sys-banner">
+  <div class="sys-banner-text">
+    <strong>This tool is part of the MH Strategic Intelligence System™</strong>
+    <span class="sys-banner-sep">·</span>
+    <span>Experience the full intelligence flow</span>
+  </div>
+  <a href="/intelligence.html" class="sys-banner-link">
+    Enter the System
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+</body>
+</html>
