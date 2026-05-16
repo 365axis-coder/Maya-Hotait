@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+  <meta name="theme-color" content="#0D1B3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Organizational Diagnostic — Maya Hotait</title>
+<meta name="description" content="A structured executive diagnostic for boards and leadership teams. Assess governance, decision-making, financial intelligence, and organizational alignment across 10 critical dimensions. By Maya Hotait.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://mayahotait.com/diagnostic.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Executive Organizational Diagnostic — Maya Hotait">
+<meta property="og:description" content="A structured executive diagnostic for boards and leadership teams. Assess governance, decision-making, financial intelligence, and organizational alignment across 10 critical dimensions.">
+<meta property="og:url" content="https://mayahotait.com/diagnostic.html">
+<meta property="og:site_name" content="Maya Hotait — Strategic Advisory">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A4A;
+  --navy2:#152038;
+  --navy3:#152038;
+  --gold:#C8A96E;
+  --gold2:#E2C98F;
+  --gold-light:#F5E6C8;
+  --orange:#E86030;
+  --white:#F8F5EF;
+  --muted:rgba(248,245,239,0.55);
+  --border:rgba(200,169,110,0.2);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Montserrat',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:#152038;
+  color:var(--white);
+  font-family:var(--sans);
+  font-weight:300;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ── BACKGROUND ── */
+.bg-grid{
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(200,169,110,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(200,169,110,0.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none;z-index:0;
+}
+.bg-glow{
+  position:fixed;
+  top:-20%;left:-10%;
+  width:60%;height:60%;
+  background:radial-gradient(ellipse,rgba(200,169,110,0.04) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+
+/* ── HEADER ── */
+.site-header{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:16px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(27,42,74,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.header-brand{
+  font-family:var(--serif);
+  font-size:15px;font-weight:300;
+  letter-spacing:3px;color:var(--gold);
+  text-decoration:none;
+}
+.header-back{
+  font-size:9px;font-weight:500;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;
+  display:flex;align-items:center;gap:8px;
+  transition:color 0.3s;
+}
+.header-back:hover{color:var(--gold)}
+.header-back svg{width:14px;height:14px;stroke:currentColor}
+
+/* ── HERO ── */
+.hero{
+  position:relative;z-index:1;
+  padding:140px 48px 80px;
+  max-width:900px;margin:0 auto;
+  text-align:center;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(200,169,110,0.3);
+  padding:8px 18px;margin-bottom:32px;
+}
+.hero-badge::before{
+  content:'';width:6px;height:6px;
+  background:var(--gold);border-radius:50%;
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(1.5)}}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(32px,5vw,58px);
+  font-weight:300;line-height:1.15;
+  letter-spacing:-0.5px;
+  margin-bottom:20px;
+}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{
+  font-size:13px;color:var(--muted);
+  line-height:1.9;max-width:600px;margin:0 auto 40px;
+}
+.hero-meta{
+  display:flex;align-items:center;justify-content:center;
+  gap:32px;flex-wrap:wrap;
+  margin-bottom:56px;
+}
+.hero-meta-item{
+  display:flex;align-items:center;gap:8px;
+  font-size:9px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+}
+.hero-meta-item svg{width:12px;height:12px;stroke:var(--gold)}
+.start-btn{
+  font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy);background:var(--gold);
+  border:none;padding:16px 44px;
+  cursor:pointer;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 24px rgba(200,169,110,0.3);
+}
+.start-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,169,110,0.45)}
+
+/* ── PROGRESS ── */
+.progress-wrap{
+  position:relative;z-index:1;
+  max-width:720px;margin:0 auto;
+  padding:0 48px;
+  display:none;
+}
+.progress-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;
+}
+.progress-label{
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+}
+.progress-count{
+  font-family:var(--serif);
+  font-size:13px;color:var(--gold);
+}
+.progress-bar{
+  height:2px;background:rgba(200,169,110,0.15);
+  border-radius:1px;overflow:hidden;
+  margin-bottom:40px;
+}
+.progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+  border-radius:1px;
+  transition:width 0.6s cubic-bezier(0.16,1,0.3,1);
+  width:0%;
+}
+.section-tag{
+  font-size:8px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--orange);
+  margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.section-tag::before{content:'';width:20px;height:1px;background:var(--orange)}
+
+/* ── QUESTION ── */
+.question-wrap{
+  opacity:0;transform:translateY(20px);
+  transition:opacity 0.5s ease,transform 0.5s ease;
+}
+.question-wrap.visible{opacity:1;transform:translateY(0)}
+.question-text{
+  font-family:var(--serif);
+  font-size:clamp(20px,3vw,28px);
+  font-weight:300;line-height:1.4;
+  color:var(--white);margin-bottom:32px;
+}
+.question-text em{font-style:italic;color:var(--gold-light)}
+
+/* ── OPTIONS ── */
+.options-grid{
+  display:flex;flex-direction:column;gap:10px;
+  margin-bottom:40px;
+}
+.option-btn{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:18px 22px;
+  background:rgba(27,42,74,0.4);
+  border:1px solid rgba(200,169,110,0.15);
+  cursor:pointer;text-align:left;
+  transition:all 0.25s ease;
+  font-family:var(--sans);
+  position:relative;overflow:hidden;
+}
+.option-btn::before{
+  content:'';
+  position:absolute;left:0;top:0;bottom:0;
+  width:0;
+  background:linear-gradient(90deg,rgba(200,169,110,0.15),transparent);
+  transition:width 0.3s ease;
+}
+.option-btn:hover::before,.option-btn.selected::before{width:100%}
+.option-btn:hover,.option-btn.selected{
+  border-color:rgba(200,169,110,0.5);
+  background:rgba(27,42,74,0.7);
+}
+.option-btn.selected{border-color:var(--gold)}
+.option-letter{
+  width:28px;height:28px;flex-shrink:0;
+  border:1px solid rgba(200,169,110,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:600;letter-spacing:1px;
+  color:var(--gold);margin-top:1px;
+  transition:all 0.25s ease;
+}
+.option-btn.selected .option-letter{
+  background:var(--gold);color:var(--navy);border-color:var(--gold);
+}
+.option-content{}
+.option-main{
+  font-size:12px;font-weight:400;
+  color:var(--white);line-height:1.5;
+  margin-bottom:3px;
+}
+.option-sub{
+  font-size:10px;color:var(--muted);line-height:1.4;
+}
+
+/* ── NAV BUTTONS ── */
+.q-nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:24px;border-top:1px solid var(--border);
+}
+.btn-prev{
+  font-size:9px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);
+  background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+  transition:color 0.3s;font-family:var(--sans);
+}
+.btn-prev:hover{color:var(--gold)}
+.btn-prev svg{width:14px;height:14px;stroke:currentColor}
+.btn-next{
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy);
+  background:var(--gold);border:none;
+  padding:12px 28px;cursor:pointer;
+  display:flex;align-items:center;gap:8px;
+  transition:background 0.3s,transform 0.2s;
+  font-family:var(--sans);
+  opacity:0.4;pointer-events:none;
+}
+.btn-next.active{opacity:1;pointer-events:all}
+.btn-next.active:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-next svg{width:14px;height:14px;stroke:currentColor}
+
+/* ── RESULTS ── */
+.results-wrap{
+  position:relative;z-index:1;
+  max-width:800px;margin:0 auto;
+  padding:100px 48px 80px;
+  display:none;
+}
+.results-header{text-align:center;margin-bottom:64px}
+.results-label{
+  font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:16px;
+}
+
+/* Score Circle */
+.score-circle-wrap{
+  display:flex;justify-content:center;margin-bottom:40px;
+}
+.score-circle{
+  position:relative;
+  width:160px;height:160px;
+}
+.score-circle svg{transform:rotate(-90deg)}
+.score-bg{fill:none;stroke:rgba(200,169,110,0.1);stroke-width:6}
+.score-fill{
+  fill:none;stroke-width:6;
+  stroke-linecap:round;
+  stroke-dasharray:440;
+  stroke-dashoffset:440;
+  transition:stroke-dashoffset 2s cubic-bezier(0.16,1,0.3,1) 0.5s;
+}
+.score-text{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+}
+.score-num{
+  font-family:var(--serif);
+  font-size:46px;font-weight:300;color:var(--white);
+  line-height:1;
+}
+.score-denom{
+  font-size:9px;letter-spacing:2px;color:var(--muted);
+  margin-top:4px;
+}
+.score-label-badge{
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;padding:4px 12px;
+  margin-top:6px;
+}
+
+/* Tier colors */
+.tier-critical .score-fill{stroke:#E86030}
+.tier-critical .score-label-badge{color:#E86030;border:1px solid rgba(232,96,48,0.4);background:rgba(232,96,48,0.08)}
+.tier-moderate .score-fill{stroke:#C8A96E}
+.tier-moderate .score-label-badge{color:var(--gold);border:1px solid rgba(200,169,110,0.4);background:rgba(200,169,110,0.08)}
+.tier-strong .score-fill{stroke:#5B8E6A}
+.tier-strong .score-label-badge{color:#7BC48A;border:1px solid rgba(91,142,106,0.4);background:rgba(91,142,106,0.08)}
+
+.results-title{
+  font-family:var(--serif);
+  font-size:clamp(24px,4vw,38px);
+  font-weight:300;line-height:1.2;
+  margin-bottom:12px;
+}
+.results-title em{font-style:italic;color:var(--gold)}
+
+/* Executive Insight */
+.insight-box{
+  background:rgba(27,42,74,0.5);
+  border:1px solid rgba(200,169,110,0.2);
+  border-left:3px solid var(--gold);
+  padding:24px 28px;margin-bottom:40px;
+  position:relative;
+}
+.insight-box::before{
+  content:'"';
+  font-family:var(--serif);
+  font-size:60px;color:rgba(200,169,110,0.1);
+  line-height:0.7;position:absolute;
+  top:16px;left:16px;
+}
+.insight-label{
+  font-size:8px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:12px;
+}
+.insight-text{
+  font-family:var(--serif);
+  font-size:17px;font-weight:300;font-style:italic;
+  color:var(--white);line-height:1.7;
+  position:relative;z-index:1;
+}
+
+/* Red Flags */
+.flags-section{margin-bottom:40px}
+.flags-title{
+  font-size:9px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.flags-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.flag-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 18px;margin-bottom:8px;
+  background:rgba(232,96,48,0.06);
+  border:1px solid rgba(232,96,48,0.2);
+  border-left:2px solid var(--orange);
+  opacity:0;transform:translateX(-12px);
+  transition:opacity 0.4s ease,transform 0.4s ease;
+}
+.flag-item.visible{opacity:1;transform:translateX(0)}
+.flag-icon{
+  width:18px;height:18px;flex-shrink:0;
+  color:var(--orange);margin-top:1px;
+}
+.flag-icon svg{width:18px;height:18px;stroke:currentColor}
+.flag-text{font-size:12px;color:var(--white);line-height:1.5}
+
+/* Dimension Bars */
+.dims-section{margin-bottom:48px}
+.dims-title{
+  font-size:9px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;
+}
+.dims-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.dim-item{margin-bottom:16px}
+.dim-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:8px;
+}
+.dim-name{font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--white)}
+.dim-score{font-family:var(--serif);font-size:14px;color:var(--gold)}
+.dim-bar{height:3px;background:rgba(200,169,110,0.1);border-radius:2px;overflow:hidden}
+.dim-fill{
+  height:100%;border-radius:2px;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+  width:0%;
+  transition:width 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* Preview Section */
+.preview-section{
+  background:rgba(27,42,74,0.3);
+  border:1px solid var(--border);
+  padding:32px;margin-bottom:40px;
+  position:relative;overflow:hidden;
+}
+.preview-blur{
+  position:absolute;bottom:0;left:0;right:0;height:60%;
+  background:linear-gradient(transparent,rgba(15,24,40,0.95));
+  pointer-events:none;z-index:2;
+}
+.preview-label{
+  font-size:8px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:16px;
+}
+.preview-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:10px 0;border-bottom:1px solid rgba(200,169,110,0.08);
+  opacity:0.4;
+}
+.preview-item:nth-child(2){opacity:0.25}
+.preview-item:nth-child(3){opacity:0.15}
+.preview-dot{
+  width:6px;height:6px;background:var(--gold);
+  border-radius:50%;flex-shrink:0;margin-top:5px;
+}
+.preview-text{font-size:11px;color:var(--muted);line-height:1.5}
+
+/* CTA Box */
+.cta-box{
+  background:linear-gradient(135deg,rgba(27,42,74,0.8),rgba(21,32,56,0.9));
+  border:1px solid rgba(200,169,110,0.25);
+  padding:44px 40px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-box::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--gold),transparent);
+}
+.cta-urgency{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:8px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--orange);
+  margin-bottom:20px;
+}
+.cta-urgency::before{
+  content:'';width:6px;height:6px;
+  background:var(--orange);border-radius:50%;
+  animation:pulse 1.5s ease-in-out infinite;
+}
+.cta-title{
+  font-family:var(--serif);
+  font-size:clamp(20px,3vw,28px);
+  font-weight:300;line-height:1.3;
+  color:var(--white);margin-bottom:12px;
+}
+.cta-title em{font-style:italic;color:var(--gold)}
+.cta-desc{
+  font-size:12px;color:var(--muted);
+  line-height:1.8;max-width:500px;
+  margin:0 auto 28px;
+}
+.cta-includes{
+  display:flex;justify-content:center;gap:24px;
+  flex-wrap:wrap;margin-bottom:32px;
+}
+.cta-include-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.cta-include-item svg{width:12px;height:12px;stroke:var(--gold)}
+.cta-btn{
+  font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy);background:var(--gold);
+  border:none;padding:16px 44px;
+  cursor:pointer;display:inline-block;
+  text-decoration:none;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 24px rgba(200,169,110,0.35);
+}
+.cta-btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 36px rgba(200,169,110,0.5)}
+.cta-authority{
+  margin-top:20px;
+  font-size:9px;color:var(--muted);
+  letter-spacing:1px;font-style:italic;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .site-header{padding:14px 20px}
+  .hero{padding:110px 20px 60px}
+  .progress-wrap{padding:0 20px}
+  .results-wrap{padding:100px 20px 60px}
+  .cta-box{padding:32px 20px}
+  .cta-includes{flex-direction:column;align-items:center;gap:12px}
+}
+
+/* ══ LEAD CAPTURE ══ */
+.lead-section{
+  position:relative;z-index:1;
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:100px 48px 80px;
+}
+.lead-wrap{
+  max-width:680px;width:100%;
+  margin:0 auto;text-align:center;
+}
+.lead-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:9px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  border:1px solid rgba(200,169,110,0.3);
+  padding:8px 18px;margin-bottom:28px;
+}
+.lead-badge-dot{
+  width:6px;height:6px;
+  background:var(--gold);border-radius:50%;
+  animation:pulse 1.5s ease-in-out infinite;
+}
+.lead-title{
+  font-family:var(--serif);
+  font-size:clamp(28px,4vw,42px);
+  font-weight:300;line-height:1.2;
+  margin-bottom:14px;
+}
+.lead-title em{font-style:italic;color:var(--gold)}
+.lead-desc{
+  font-size:12px;color:var(--muted);
+  line-height:1.8;margin-bottom:32px;
+}
+/* Preview blurred bars */
+.lead-preview-scores{
+  position:relative;
+  background:rgba(27,42,74,0.4);
+  border:1px solid var(--border);
+  padding:20px 24px;margin-bottom:36px;
+  overflow:hidden;
+}
+.lead-preview-item{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:10px;
+}
+.lead-preview-item:last-child{margin-bottom:0}
+.lead-preview-item span{
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+  width:80px;text-align:left;flex-shrink:0;
+}
+.lead-preview-bar{
+  height:3px;flex:1;
+  background:linear-gradient(90deg,var(--gold),var(--orange));
+  border-radius:2px;width:65%;
+  filter:blur(0px);
+}
+.lead-blur{
+  position:absolute;inset:0;
+  background:linear-gradient(transparent 30%,rgba(27,42,74,0.97));
+  pointer-events:none;
+}
+/* Form */
+.lead-form{text-align:left;margin-bottom:24px}
+.lead-form-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:14px;margin-bottom:14px;
+}
+.lead-fg{display:flex;flex-direction:column;gap:7px}
+.lead-fg label{
+  font-size:9px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);
+}
+.lead-fg input,.lead-fg select{
+  background:rgba(27,42,74,0.5);
+  border:1px solid rgba(200,169,110,0.2);
+  color:var(--white);
+  font-family:var(--sans);font-size:12px;
+  font-weight:300;padding:12px 16px;
+  transition:border-color 0.3s;
+  outline:none;
+  -webkit-appearance:none;
+}
+.lead-fg input::placeholder{color:rgba(248,245,239,0.3)}
+.lead-fg input:focus,.lead-fg select:focus{border-color:var(--gold)}
+.lead-fg select option{background:var(--navy2);color:var(--white)}
+.lead-privacy{
+  display:flex;align-items:center;gap:8px;
+  font-size:9px;color:var(--muted);
+  letter-spacing:1px;margin-bottom:20px;
+  font-style:italic;
+}
+.lead-submit-btn{
+  width:100%;
+  font-family:var(--sans);
+  font-size:10px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--navy);background:var(--gold);
+  border:none;padding:16px;
+  cursor:pointer;
+  transition:background 0.3s,transform 0.2s,box-shadow 0.2s;
+  box-shadow:0 4px 24px rgba(200,169,110,0.3);
+}
+.lead-submit-btn:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 8px 32px rgba(200,169,110,0.45)}
+/* Authority */
+.lead-authority{
+  display:flex;justify-content:center;
+  gap:24px;flex-wrap:wrap;
+}
+.lead-auth-item{
+  display:flex;align-items:center;gap:7px;
+  font-size:9px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+}
+.lead-auth-item svg{stroke:var(--gold)}
+@media(max-width:768px){
+  .lead-section{padding:100px 20px 60px}
+  .lead-form-row{grid-template-columns:1fr}
+}
+
+.sys-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:200;
+  background:rgba(21,32,56,0.97);
+  border-top:1px solid rgba(200,169,110,0.2);
+  backdrop-filter:blur(20px);
+  padding:12px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;
+}
+.sys-banner::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--orange),var(--gold),transparent);
+}
+.sys-banner-text{
+  font-size:11px;color:var(--muted);
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.sys-banner-text strong{
+  color:var(--white);font-weight:400;
+  font-family:var(--serif);font-size:13px;font-style:italic;
+}
+.sys-banner-sep{color:rgba(200,169,110,0.3)}
+.sys-banner-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:9px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--navy);
+  background:var(--gold);padding:9px 20px;
+  text-decoration:none;white-space:nowrap;flex-shrink:0;
+  transition:background 0.3s;
+}
+.sys-banner-link:hover{background:var(--gold2)}
+.sys-banner-link svg{width:12px;height:12px;stroke:var(--navy)}
+@media(max-width:768px){
+  .sys-banner{padding:10px 16px;flex-direction:column;gap:10px}
+  .sys-banner-link{width:100%;justify-content:center}
+}
+</style>
+
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+_linkedin_partner_id = "10045513";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+(function(l) {
+  if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+  window.lintrk.q=[]}
+  var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script");
+  b.type = "text/javascript"; b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);
+})(window.lintrk);
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none;" alt="LinkedIn Insight Tag"
+    src="https://px.ads.linkedin.com/collect/?pid=10045513&fmt=gif"/>
+</noscript>
+<!-- End LinkedIn Insight Tag -->
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://mayahotait.com" class="header-brand">Maya Hotait</a>
+  <a href="https://mayahotait.com" class="header-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Back to Website
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="heroSection">
+  <div class="hero-badge">Executive Diagnostic Tool</div>
+  <h1>Is Your Organization <em>Structurally Aligned</em> —<br>or Operating Under Hidden Gaps?</h1>
+  <p class="hero-desc">Answer a set of executive-level questions to assess how your organization is structured, how decisions are made, and where performance may be constrained — before a single consultant enters the room.</p>
+  <div id="corridorFrame" style="display:none;max-width:600px;margin:0 auto 24px;padding:20px 24px;background:rgba(200,169,110,0.06);border:1px solid rgba(200,169,110,0.25);border-left:3px solid var(--gold);text-align:left">
+    <div style="font-size:8px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px">You are in the right place</div>
+    <p id="corridorFrameText" style="font-size:13px;color:var(--white);line-height:1.75;font-family:var(--serif);font-weight:300;font-style:italic;margin:0"></p>
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      8–10 Minutes
+    </div>
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      CEOs, CFOs & Board Leaders
+    </div>
+    <div class="hero-meta-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Instant Score & Insights
+    </div>
+  </div>
+  <button class="start-btn" onclick="startDiagnostic()">Begin Executive Diagnostic →</button>
+  <p style="margin-top:16px;font-size:9px;color:var(--muted);letter-spacing:1.5px;font-style:italic">Based on real-world restructuring and advisory experience across MENA, Africa & Eurasia</p>
+</section>
+
+<!-- PROGRESS + QUESTIONS -->
+<div class="progress-wrap" id="questionSection">
+  <div class="progress-header">
+    <span class="progress-label" id="sectionLabel">Governance & Decision Making</span>
+    <span class="progress-count" id="qCount">1 / 10</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="question-wrap" id="questionWrap">
+    <div class="section-tag" id="sectionTag">Governance</div>
+    <p class="question-text" id="questionText"></p>
+    <div class="options-grid" id="optionsGrid"></div>
+    <div class="q-nav">
+      <button class="btn-prev" id="btnPrev" onclick="prevQuestion()">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Previous
+      </button>
+      <button class="btn-next" id="btnNext" onclick="nextQuestion()">
+        Next
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- LEAD CAPTURE -->
+<div class="lead-section" id="leadSection" style="display:none">
+  <div class="lead-wrap">
+    <div class="lead-badge">
+      <span class="lead-badge-dot"></span>
+      Your Diagnostic Is Ready
+    </div>
+    <h2 class="lead-title">Your <em>Executive Diagnostic Report</em><br>Has Been Generated</h2>
+    <p class="lead-desc">Enter your details to unlock your personalized score, red flags, and dimension analysis — delivered instantly.</p>
+    
+    <div class="lead-preview-scores">
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar"></div>
+        <span>Governance</span>
+      </div>
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar" style="width:55%"></div>
+        <span>Structure</span>
+      </div>
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar" style="width:70%"></div>
+        <span>Finance</span>
+      </div>
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar" style="width:45%"></div>
+        <span>Leadership</span>
+      </div>
+      <div class="lead-preview-item">
+        <div class="lead-preview-bar" style="width:60%"></div>
+        <span>Strategy</span>
+      </div>
+      <div class="lead-blur"></div>
+    </div>
+
+    <form class="lead-form" onsubmit="submitLead(event)">
+      <div class="lead-form-row">
+        <div class="lead-fg">
+          <label>Full Name *</label>
+          <input type="text" id="leadName" placeholder="Your full name" required>
+        </div>
+        <div class="lead-fg">
+          <label>Email Address *</label>
+          <input type="email" id="leadEmail" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="lead-form-row">
+        <div class="lead-fg">
+          <label>Organisation *</label>
+          <input type="text" id="leadCompany" placeholder="Company or institution" required>
+        </div>
+        <div class="lead-fg">
+          <label>Your Role</label>
+          <select id="leadRole">
+            <option value="" disabled selected>Select your role</option>
+            <option>CEO / Managing Director</option>
+            <option>CFO / Finance Director</option>
+            <option>Board Member / Chairman</option>
+            <option>COO / Operations Director</option>
+            <option>Strategy Director</option>
+            <option>Other Executive</option>
+          </select>
+        </div>
+      </div>
+      <div class="lead-privacy">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Your information is confidential and will only be used to send you your diagnostic report.
+      </div>
+      <button type="submit" class="lead-submit-btn" id="leadSubmitBtn">
+        Unlock My Diagnostic Report →
+      </button>
+    </form>
+
+    <div class="lead-authority">
+      <div class="lead-auth-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+        Instant results — no waiting
+      </div>
+      <div class="lead-auth-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+        No spam, ever
+      </div>
+      <div class="lead-auth-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+        Based on 20+ years advisory experience
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="results-wrap" id="resultsSection"></div>
+
+<script>
+var questions = [
+  {
+    section:"Governance & Decision Making",
+    tag:"Governance",
+    text:"When a major strategic decision is needed, how would you describe the <em>clarity of ownership</em> at the leadership level?",
+    options:[
+      {letter:"A",main:"Decisions are owned, delegated, and executed with clear accountability structures.",sub:"Role clarity exists at every level of the decision chain.",score:4},
+      {letter:"B",main:"Ownership is generally understood but occasionally overlaps between functions.",sub:"Some ambiguity arises during cross-functional decisions.",score:3},
+      {letter:"C",main:"Decision-making is centralized but not always structured — it depends on the situation.",sub:"Leadership involvement is inconsistent.",score:2},
+      {letter:"D",main:"Decisions are made reactively, often without defined ownership or structured process.",sub:"Accountability is unclear and rarely documented.",score:1}
+    ]
+  },
+  {
+    section:"Governance & Decision Making",
+    tag:"Governance",
+    text:"How would you assess your board or leadership team's <em>visibility into operational performance</em> — beyond financial metrics?",
+    options:[
+      {letter:"A",main:"We have real-time governance dashboards covering operational, financial, and strategic KPIs.",sub:"Board reporting is structured, timely, and action-oriented.",score:4},
+      {letter:"B",main:"Reporting exists but is primarily financial — operational health is assessed informally.",sub:"Some blind spots exist at the governance level.",score:3},
+      {letter:"C",main:"Leadership visibility is limited to periodic reports and informal updates.",sub:"No structured governance intelligence framework exists.",score:2},
+      {letter:"D",main:"Leadership relies on verbal briefings and reactive information.",sub:"There is no systematic visibility framework in place.",score:1}
+    ]
+  },
+  {
+    section:"Structural Alignment",
+    tag:"Structure",
+    text:"How well does your current <em>organizational structure</em> reflect your strategic priorities for the next 3 years?",
+    options:[
+      {letter:"A",main:"Structure was deliberately designed around our strategic direction.",sub:"Roles, teams, and reporting lines are aligned with growth objectives.",score:4},
+      {letter:"B",main:"Structure broadly supports our strategy, though some functions are misaligned.",sub:"We operate with minor inefficiencies due to legacy design.",score:3},
+      {letter:"C",main:"Our structure evolved organically and was never formally redesigned.",sub:"There is visible tension between what the structure supports and what strategy demands.",score:2},
+      {letter:"D",main:"Structure is reactive — built around personalities and historical roles rather than strategic intent.",sub:"There is significant misalignment between design and direction.",score:1}
+    ]
+  },
+  {
+    section:"Structural Alignment",
+    tag:"Structure",
+    text:"When performance gaps appear, how does your organization typically <em>diagnose the root cause</em>?",
+    options:[
+      {letter:"A",main:"We use structured diagnostic frameworks to separate symptoms from root causes.",sub:"Root cause analysis is embedded in our performance review cycle.",score:4},
+      {letter:"B",main:"We investigate performance gaps but analysis is often surface-level.",sub:"Root cause identification is inconsistent across teams.",score:3},
+      {letter:"C",main:"Performance gaps are addressed through immediate fixes rather than structural diagnosis.",sub:"We treat symptoms without examining the underlying cause.",score:2},
+      {letter:"D",main:"Performance gaps are rarely analyzed — we respond to urgency, not cause.",sub:"There is no formal diagnostic process at any level.",score:1}
+    ]
+  },
+  {
+    section:"Financial Clarity & Control",
+    tag:"Finance",
+    text:"How would you characterize your organization's <em>financial intelligence</em> — beyond tracking revenue and expenses?",
+    options:[
+      {letter:"A",main:"We operate with real-time financial visibility, rolling forecasts, and scenario-based planning.",sub:"Finance functions as a strategic control system, not a reporting function.",score:4},
+      {letter:"B",main:"Financial reporting is structured, but forward-looking intelligence is limited.",sub:"We rely on monthly reports — not predictive financial insight.",score:3},
+      {letter:"C",main:"Financial tracking is operational — we monitor cash flow and costs reactively.",sub:"Strategic financial planning is limited or absent.",score:2},
+      {letter:"D",main:"Financial management is basic — revenue and expense tracking only.",sub:"No forecasting, cost architecture, or financial strategy framework exists.",score:1}
+    ]
+  },
+  {
+    section:"Financial Clarity & Control",
+    tag:"Finance",
+    text:"To what extent does your organization have a <em>strong internal control environment</em> — including audit, compliance, and risk oversight?",
+    options:[
+      {letter:"A",main:"Internal audit is active, independent, and embedded in governance.",sub:"Risk management and compliance frameworks are operational and reviewed regularly.",score:4},
+      {letter:"B",main:"Some internal controls exist but are not consistently enforced or reviewed.",sub:"Risk oversight is present but not systematically integrated.",score:3},
+      {letter:"C",main:"Internal controls are minimal — compliance is handled reactively.",sub:"Audit and risk functions are either absent or decorative.",score:2},
+      {letter:"D",main:"There are no formal internal controls in place.",sub:"Risk and compliance are managed informally or not at all.",score:1}
+    ]
+  },
+  {
+    section:"Leadership & Execution",
+    tag:"Leadership",
+    text:"How would you assess the <em>alignment between your leadership team</em> on strategic priorities and execution accountability?",
+    options:[
+      {letter:"A",main:"Leadership is fully aligned — strategy, priorities, and accountability are shared and documented.",sub:"There is no ambiguity around who owns what outcome.",score:4},
+      {letter:"B",main:"Leadership is broadly aligned, though execution accountability varies by function.",sub:"Some friction exists in cross-functional ownership.",score:3},
+      {letter:"C",main:"Leadership alignment is surface-level — agreement in meetings, divergence in execution.",sub:"Priorities shift based on individual interpretation.",score:2},
+      {letter:"D",main:"Leadership team operates in silos with different interpretations of strategy.",sub:"Execution accountability is largely undefined.",score:1}
+    ]
+  },
+  {
+    section:"Leadership & Execution",
+    tag:"Leadership",
+    text:"How does your organization handle <em>execution under pressure</em> — when market conditions change or internal crises emerge?",
+    options:[
+      {letter:"A",main:"We have defined crisis protocols and scenario plans that activate immediately.",sub:"Execution remains structured even under volatility.",score:4},
+      {letter:"B",main:"We adapt quickly, but improvisation often replaces structured response.",sub:"No formal protocols — but leadership experience compensates.",score:3},
+      {letter:"C",main:"Crisis response is reactive and often chaotic.",sub:"We default to cost-cutting without strategic analysis.",score:2},
+      {letter:"D",main:"Pressure exposes severe structural weaknesses.",sub:"Decision-making collapses and execution stalls under stress.",score:1}
+    ]
+  },
+  {
+    section:"Strategic Clarity",
+    tag:"Strategy",
+    text:"How clearly is your organizational <em>strategy communicated</em> — from board level to operational teams?",
+    options:[
+      {letter:"A",main:"Strategy is translated into operational objectives at every level.",sub:"Employees understand how their work connects to organizational direction.",score:4},
+      {letter:"B",main:"Strategy is clear at the leadership level but loses clarity in translation.",sub:"Operational teams work from directives, not strategic understanding.",score:3},
+      {letter:"C",main:"Strategy exists at the executive level but is rarely communicated downward.",sub:"There is a significant gap between strategic intent and operational reality.",score:2},
+      {letter:"D",main:"There is no clearly articulated strategy — direction shifts frequently.",sub:"Teams operate without strategic context.",score:1}
+    ]
+  },
+  {
+    section:"Strategic Clarity",
+    tag:"Strategy",
+    text:"What best describes your organization's <em>readiness for transformation</em> — whether restructuring, scaling, or market repositioning?",
+    options:[
+      {letter:"A",main:"We have the structural, financial, and leadership foundations to absorb transformation.",sub:"Change initiatives are well-governed and systematically executed.",score:4},
+      {letter:"B",main:"We are capable of transformation but lack the governance architecture to sustain it.",sub:"Change is initiated but rarely embedded at the structural level.",score:3},
+      {letter:"C",main:"Transformation attempts have been made but disrupted by structural or political resistance.",sub:"We initiate change, but lose momentum quickly.",score:2},
+      {letter:"D",main:"The organization is not ready for transformation.",sub:"Current structural, financial, or leadership conditions would destabilize any change effort.",score:1}
+    ]
+  }
+];
+
+var currentQ = 0;
+var answers = new Array(questions.length).fill(null);
+
+function startDiagnostic(){
+  document.getElementById('heroSection').style.display='none';
+  document.getElementById('questionSection').style.display='block';
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const q = questions[currentQ];
+  document.getElementById('sectionLabel').textContent = q.section;
+  document.getElementById('sectionTag').textContent = q.tag;
+  document.getElementById('qCount').textContent = (currentQ+1) + ' / ' + questions.length;
+  document.getElementById('progressFill').style.width = ((currentQ)/questions.length*100) + '%';
+  document.getElementById('questionText').innerHTML = q.text;
+  document.getElementById('btnPrev').style.visibility = currentQ === 0 ? 'hidden' : 'visible';
+
+  const nextBtn = document.getElementById('btnNext');
+  nextBtn.textContent = currentQ === questions.length-1 ? 'View My Results' : 'Next';
+  if(currentQ === questions.length-1){
+    nextBtn.innerHTML = 'View My Results <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+  } else {
+    nextBtn.innerHTML = 'Next <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+  }
+
+  const grid = document.getElementById('optionsGrid');
+  grid.innerHTML = '';
+  q.options.forEach((opt,i)=>{
+    const btn = document.createElement('button');
+    btn.className = 'option-btn' + (answers[currentQ]===i?' selected':'');
+    btn.innerHTML = `<div class="option-letter">${opt.letter}</div><div class="option-content"><div class="option-main">${opt.main}</div><div class="option-sub">${opt.sub}</div></div>`;
+    btn.onclick = ()=>selectOption(i);
+    grid.appendChild(btn);
+  });
+
+  updateNextBtn();
+  const wrap = document.getElementById('questionWrap');
+  wrap.classList.remove('visible');
+  setTimeout(()=>wrap.classList.add('visible'),50);
+}
+
+function selectOption(i){
+  answers[currentQ] = i;
+  document.querySelectorAll('.option-btn').forEach((b,j)=>{
+    b.classList.toggle('selected',j===i);
+  });
+  updateNextBtn();
+}
+
+function updateNextBtn(){
+  const btn = document.getElementById('btnNext');
+  btn.classList.toggle('active', answers[currentQ]!==null);
+}
+
+function nextQuestion(){
+  if(answers[currentQ]===null) return;
+  if(currentQ < questions.length-1){
+    currentQ++;
+    renderQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function prevQuestion(){
+  if(currentQ > 0){currentQ--;renderQuestion();}
+}
+
+function showResults(){
+  document.getElementById('questionSection').style.display='none';
+  document.getElementById('leadSection').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function submitLead(e){
+  e.preventDefault();
+  var btn = document.getElementById('leadSubmitBtn');
+  var name = document.getElementById('leadName').value;
+  var email = document.getElementById('leadEmail').value;
+  var company = document.getElementById('leadCompany').value;
+  var role = document.getElementById('leadRole').value;
+
+  btn.textContent = 'Generating your report...';
+  btn.style.opacity = '0.7';
+
+  // Build answers summary
+  var answersSummary = '';
+  questions.forEach(function(q,i){
+    if(answers[i]!==null){
+      answersSummary += q.section + ': ' + q.options[answers[i]].main + ' | ';
+    }
+  });
+
+  // Calculate score for email
+  var totalScore = 0;
+  questions.forEach(function(q,i){
+    if(answers[i]!==null) totalScore += q.options[answers[i]].score;
+  });
+  var pct = Math.round((totalScore/(questions.length*4))*100);
+  var tier = pct>=75?'Well-Structured':pct>=50?'Gaps Detected':'Critical Risk';
+
+  // Send to Web3Forms
+  var formData = new FormData();
+  formData.append('access_key','bc54ec16-ba1b-45d7-9089-201f01ed157d');
+  formData.append('subject','New Executive Diagnostic — ' + name + ' | Score: ' + pct + '/100');
+  formData.append('from_name','Maya Hotait Diagnostic Tool');
+  formData.append('name', name);
+  formData.append('email', email);
+  formData.append('company', company);
+  formData.append('role', role);
+  formData.append('diagnostic_score', pct + '/100 — ' + tier);
+  formData.append('answers', answersSummary);
+
+  
+  // ── Auto-save to MH CRM ──
+  (function saveToCRM() {
+    var lead = {
+      name: name, email: email, company: company, role: role,
+      source: 'diagnostic',
+      score: String(pct),
+      level: tier,
+      track: 'Organizational',
+      insight: 'Executive Diagnostic completed — ' + tier,
+      dimensions: answersSummary,
+      status: 'new', priority: 'low', deal: 'low',
+      next_action: 'Follow-up',
+      date: new Date().toISOString(),
+      entry_corridor: (new URLSearchParams(window.location.search).get('corridor') || 'direct')
+    };
+    fetch('https://ztmgubjyuiztkqlnlpqp.supabase.co/rest/v1/leads', {
+      method: 'POST',
+      headers: {
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0bWd1Ymp5dWl6dGtxbG5scHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxNTI2MDcsImV4cCI6MjA5MTcyODYwN30.EKqyk11npZ0zb4zuugswrxS9zW-rF9_Hz4raux4BiOQ',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0bWd1Ymp5dWl6dGtxbG5scHFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYxNTI2MDcsImV4cCI6MjA5MTcyODYwN30.EKqyk11npZ0zb4zuugswrxS9zW-rF9_Hz4raux4BiOQ',
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(lead)
+    }).catch(function(e) { console.warn('CRM save failed:', e); });
+  })();
+
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:formData})
+    .catch(function(err){ console.log('Form error',err); });
+
+  // Show results immediately
+  document.getElementById('leadSection').style.display='none';
+  var rs = document.getElementById('resultsSection');
+  rs.style.display='block';
+
+  // Calculate scores
+  var totalScore = 0;
+  const dimScores = {Governance:0,Structure:0,Finance:0,Leadership:0,Strategy:0};
+  const dimCounts = {Governance:0,Structure:0,Finance:0,Leadership:0,Strategy:0};
+
+  questions.forEach((q,i)=>{
+    if(answers[i]!==null){
+      const s = q.options[answers[i]].score;
+      totalScore += s;
+      dimScores[q.tag] += s;
+      dimCounts[q.tag]++;
+    }
+  });
+
+  var maxScore = questions.length * 4;
+  var pct = Math.round((totalScore/maxScore)*100);
+
+  // Dimension percentages
+  var dims = Object.keys(dimScores).map(k=>({
+    name:k,
+    pct:Math.round((dimScores[k]/(dimCounts[k]*4))*100)
+  }));
+
+  // Tier
+  var tier, tierLabel, tierColor, insightText, flags;
+  if(pct >= 75){
+    tier='tier-strong'; tierLabel='Well-Structured';
+    insightText = `Your organization demonstrates strong structural foundations — governance is visible, decisions are owned, and financial controls are active. The priority now is sustaining this architecture through growth and proactively closing the remaining gaps before they compound under pressure.`;
+    flags = [
+      "Maintain governance discipline as scale increases — high-performing structures often erode during rapid growth phases.",
+      "Ensure leadership alignment is formally documented, not only culturally assumed.",
+      "Build scenario-readiness into your strategic planning cycle before the next disruption cycle."
+    ];
+  } else if(pct >= 50){
+    tier='tier-moderate'; tierLabel='Gaps Detected';
+    insightText = `Your organization shows recognizable structure, but critical gaps in governance visibility, decision ownership, or financial intelligence are constraining execution. Without deliberate intervention, these gaps will widen — particularly under growth pressure or market disruption.`;
+    flags = [
+      dims.sort((a,b)=>a.pct-b.pct)[0].name + " shows the highest risk — this is where structural misalignment is most likely surfacing in execution.",
+      "Decision ownership ambiguity is likely creating invisible friction between leadership and operational teams.",
+      "Financial oversight may be reactive rather than strategic — a critical vulnerability during transformation or crisis."
+    ];
+  } else {
+    tier='tier-critical'; tierLabel='Critical Risk';
+    insightText = `Your diagnostic results indicate significant structural misalignment at multiple levels — governance, financial control, and strategic execution are not operating as an integrated system. Without structural intervention, performance constraints will compound and become increasingly difficult to reverse.`;
+    flags = [
+      "Structural misalignment between leadership intent and organizational design is creating invisible resistance to execution.",
+      "Governance visibility gaps are leaving leadership exposed — decisions are being made without adequate intelligence.",
+      "Financial controls and internal audit functions require urgent review — current exposure is higher than visible."
+    ];
+  }
+
+  // Render
+  rs.innerHTML = `
+    <div class="results-header">
+      <div class="results-label">Your Executive Diagnostic Results</div>
+      <div class="score-circle-wrap">
+        <div class="score-circle ${tier}">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle class="score-bg" cx="80" cy="80" r="70"/>
+            <circle class="score-fill" id="scoreFill" cx="80" cy="80" r="70"/>
+          </svg>
+          <div class="score-text">
+            <div class="score-num" id="scoreNum">0</div>
+            <div class="score-denom">/ 100</div>
+            <div class="score-label-badge">${tierLabel}</div>
+          </div>
+        </div>
+      </div>
+      <h2 class="results-title">Your Organization Has <em>Visible Gaps</em><br>That Require Strategic Attention</h2>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-label">Executive Insight</div>
+      <p class="insight-text">${insightText}</p>
+    </div>
+
+    <div class="flags-section">
+      <div class="flags-title">Key Red Flags Identified</div>
+      ${flags.map((f,i)=>`
+        <div class="flag-item" id="flag${i}">
+          <div class="flag-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div class="flag-text">${f}</div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="dims-section">
+      <div class="dims-title">Performance by Dimension</div>
+      ${dims.map(d=>`
+        <div class="dim-item">
+          <div class="dim-header">
+            <span class="dim-name">${d.name}</span>
+            <span class="dim-score">${d.pct}%</span>
+          </div>
+          <div class="dim-bar"><div class="dim-fill" data-pct="${d.pct}"></div></div>
+        </div>
+      `).join('')}
+    </div>
+
+    <div class="preview-section">
+      <div class="preview-label">Full Diagnostic Report — Preview Only</div>
+      <div class="preview-item"><div class="preview-dot"></div><div class="preview-text">Root cause analysis across all 5 structural dimensions with priority ranking</div></div>
+      <div class="preview-item"><div class="preview-dot"></div><div class="preview-text">Decision gap mapping — where authority breaks down and accountability diffuses</div></div>
+      <div class="preview-item"><div class="preview-dot"></div><div class="preview-text">Tailored restructuring roadmap with phased intervention priorities</div></div>
+      <div class="preview-blur"></div>
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-urgency">Limited Availability — Executive Sessions</div>
+      <h3 class="cta-title">Your Full Diagnostic Report is Available<br>Through a <em>90-Minute Executive Assessment</em></h3>
+      <p class="cta-desc">Including root cause analysis, decision gap mapping, and a tailored restructuring roadmap — delivered by Maya Hotait based on your specific diagnostic results.</p>
+      <div class="cta-includes">
+        <div class="cta-include-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Root Cause Analysis</div>
+        <div class="cta-include-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Decision Gap Mapping</div>
+        <div class="cta-include-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Restructuring Roadmap</div>
+      </div>
+      <a href="https://calendly.com/mayahotait21/20min" target="_blank" class="cta-btn" id="ctaBtn">Book Your 20-Minute Diagnostic Session →</a>
+      <p class="cta-authority">Designed for CEOs, CFOs, and Board Leaders navigating complexity or transformation · Based on real-world advisory experience across MENA, Africa & Eurasia</p>
+    </div>
+  `;
+
+  // Animate score counter
+  var count = 0;
+  var target = pct;
+  var interval = setInterval(()=>{
+    count += 2;
+    if(count >= target){count=target;clearInterval(interval);}
+    document.getElementById('scoreNum').textContent = count;
+  },30);
+
+  // Animate score circle
+  setTimeout(()=>{
+    var circ = document.getElementById('scoreFill');
+    var r = 70;
+    var circumference = 2*Math.PI*r;
+    circ.style.strokeDasharray = circumference;
+    circ.style.strokeDashoffset = circumference - (pct/100)*circumference;
+  },100);
+
+  // Animate flags
+  setTimeout(()=>{
+    flags.forEach((_,i)=>{
+      setTimeout(()=>{
+        const el = document.getElementById('flag'+i);
+        if(el) el.classList.add('visible');
+      }, i*200);
+    });
+  },600);
+
+  // Animate dimension bars
+  setTimeout(()=>{
+    document.querySelectorAll('.dim-fill').forEach(el=>{
+      el.style.width = el.dataset.pct + '%';
+    });
+  },800);
+
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+<!-- MH Intelligence System Banner -->
+<div class="sys-banner">
+  <div class="sys-banner-text">
+    <strong>This tool is part of the MH Strategic Intelligence System™</strong>
+    <span class="sys-banner-sep">·</span>
+    <span>Experience the full intelligence flow</span>
+  </div>
+  <a href="/intelligence.html" class="sys-banner-link">
+    Enter the System
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<script>
+function initCorridor() {
+  var corridor = new URLSearchParams(window.location.search).get('corridor') || 'direct';
+  var frames = {
+    'strategic': 'You are here because your institution is facing both financial constraint and growth pressure simultaneously — and the two are connected. This diagnostic maps where your financial architecture and operating model are creating the ceiling together.',
+    'direct': ''
+  };
+  var ctaLabels = {
+    'strategic': 'Book Your 20-Minute Strategic Session →',
+    'direct': 'Book Your 20-Minute Diagnostic Session →'
+  };
+  window._corridor = corridor;
+  if (frames[corridor]) {
+    var cf = document.getElementById('corridorFrame');
+    var ct = document.getElementById('corridorFrameText');
+    if (cf && ct) {
+      ct.textContent = frames[corridor];
+      cf.style.display = 'block';
+    }
+  }
+  var ctaBtn = document.getElementById('ctaBtn');
+  if (ctaBtn && ctaLabels[corridor]) {
+    ctaBtn.textContent = ctaLabels[corridor];
+  }
+}
+initCorridor();
+</script>
+</body>
+</html>
